@@ -2,14 +2,14 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { profile } from '../data/portfolio';
 import { useSmoothScroll } from '../hooks/smoothScroll';
-import { useVisitorCount } from '../hooks/useVisitorCount';
 import { EASE, Magnetic, Particles } from './fx';
 import { SeriesMark } from './Poster';
 
 export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollTo } = useSmoothScroll();
-  const visitors = useVisitorCount();
+  // Fixed number for now. For the live count, use `const visitors = useVisitorCount();` from '../hooks/useVisitorCount'.
+  const visitors: number | null = 12;
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'start 0.2'] });
   const spacing = useTransform(scrollYProgress, [0, 1], ['0.6em', '0.02em']);
   const blur = useTransform(scrollYProgress, [0, 1], ['blur(16px)', 'blur(0px)']);
