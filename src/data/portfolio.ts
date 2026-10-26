@@ -71,10 +71,12 @@ export const experience = [
     place: 'Noida',
     period: 'July 2025 – Present',
     points: [
-      'Contributed to the end-to-end development of CPV and LEAD workflows for a lending platform by translating business requirements into API requirements, functional specifications and user stories.',
-      'Collaborated with Product Owners, Developers, QA teams and stakeholders in an Agile environment to define BRs, data flows and API integrations, and deliver solutions aligned with business objectives.',
+      'Working in the Retail Banking – Lending domain, owning product features end to end: business requirements → user stories → ATDD → customer demos.',
+      'Lead Management (backend): delivered the module end to end — captured business requirements, wrote user stories and ATDD scenarios, and collaborated with stakeholders and Product Managers through delivery.',
+      'Contact Point Verification (CPV): wrote the user stories, tested the feature and identified bugs with the PQM team, authored ATDD scenarios in Given-When-Then (GWT) format, documented the product write-up and ran customer demos.',
+      'User Management & IAM: currently working on identity and access management for the whole product.',
       'Analyzed lending workflows using SQL and Excel to identify bottlenecks, manual touchpoints and process inefficiencies, enabling data-driven process improvements.',
-      'Created process flows, workflow documentation, traceability matrices and ATDD scenarios to support solution design, requirement traceability, test automation and process standardization.',
+      'Created process flows, workflow documentation and traceability matrices to support solution design, requirement traceability and process standardization.',
     ],
   },
   {
@@ -112,7 +114,7 @@ export type Project = {
   /** Omit when the repository isn't public — the GitHub button is hidden instead of linking to a 404. */
   github?: string;
   palette: Palette;
-  motif: 'document' | 'detect' | 'city' | 'points' | 'domains' | 'chart';
+  motif: 'funnel' | 'verify' | 'lock' | 'document' | 'detect' | 'city' | 'points' | 'domains' | 'chart';
 };
 
 const crimson: Palette = { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' };
@@ -122,6 +124,54 @@ const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent
 const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
 
 export const projects: Project[] = [
+  {
+    id: 'lead-management',
+    title: 'Lead Management',
+    year: 'Shipped',
+    genre: 'Retail Banking • Lending • Business Analysis',
+    logline: 'The backend Lead Management module of a retail-banking lending product — taken from business requirement to ATDD, end to end.',
+    stack: ['Business Requirements', 'User Stories', 'ATDD', 'API Requirements', 'Agile'],
+    build: [
+      'Owned the backend Lead Management module end to end — from capturing business requirements to writing user stories and ATDD scenarios.',
+      'Translated lending business requirements into API requirements and functional specifications for the development team.',
+      'Collaborated with stakeholders and Product Managers in an Agile setup to refine scope, data flows and acceptance criteria through delivery.',
+    ],
+    features: ['Business requirement → user story → ATDD traceability', 'Backend lead workflows for retail lending', 'API requirements & functional specifications', 'Stakeholder & Product Manager alignment'],
+    metrics: [],
+    palette: ocean,
+    motif: 'funnel',
+  },
+  {
+    id: 'contact-point-verification',
+    title: 'Contact Point Verification',
+    year: 'Shipped',
+    genre: 'Retail Banking • Lending • QA',
+    logline: 'CPV for the lending journey — from user stories and Given-When-Then acceptance tests to bug triage with PQM and live customer demos.',
+    stack: ['User Stories', 'ATDD (GWT)', 'Functional Testing', 'Product Documentation', 'Customer Demos'],
+    build: [
+      'Wrote the user stories for the CPV (Contact Point Verification) feature of the lending product.',
+      'Tested the feature end to end, identified bugs and worked with the PQM team to get them resolved.',
+      'Authored ATDD scenarios in Given-When-Then (GWT) format and documented the product write-up.',
+      'Ran product demos for customers.',
+    ],
+    features: ['Given-When-Then acceptance scenarios', 'Bug identification with the PQM team', 'Product write-up documentation', 'Customer demos'],
+    metrics: [],
+    palette: jade,
+    motif: 'verify',
+  },
+  {
+    id: 'user-management-iam',
+    title: 'User Management & IAM',
+    year: 'Now',
+    genre: 'Retail Banking • Identity & Access',
+    logline: 'Identity and access management for the whole lending product — the production currently filming.',
+    stack: ['IAM', 'User Management', 'Business Requirements', 'User Stories'],
+    build: ['Currently working on User Management and IAM (Identity & Access Management) across the whole system of the product.'],
+    features: ['User management across the product', 'Identity & access management', 'Platform-wide scope'],
+    metrics: [],
+    palette: violet,
+    motif: 'lock',
+  },
   {
     id: 'herbal-llm',
     title: 'Herbal Literature LLM',
@@ -213,8 +263,8 @@ export const projects: Project[] = [
   },
 ];
 
-export const originalsBlurb = 'Six productions from the resume — data analysis, an LLM-powered thesis and applied ML research. Open any title for the full story.';
-export const originalsPeriod = '2023 – 2025';
+export const originalsBlurb = 'Three productions from the lending floor at Nucleus Software, plus six from data analysis, an LLM-powered thesis and applied ML research. Open any title for the full story.';
+export const originalsPeriod = '2023 – Now';
 
 export type Achievement = {
   id: string;
@@ -298,9 +348,40 @@ export const skillCategories: SkillCategory[] = [
       { name: 'User Stories', mono: 'Us' },
       { name: 'Process Flows', mono: 'Pf' },
       { name: 'Traceability Matrices', mono: 'Tm' },
-      { name: 'ATDD Scenarios', mono: 'At' },
+      { name: 'ATDD (Given-When-Then)', mono: 'At' },
+      { name: 'Functional Testing', mono: 'Ft' },
+      { name: 'Product Documentation', mono: 'Pd' },
+      { name: 'Customer Demos', mono: 'Cd' },
       { name: 'Agile', mono: 'Ag' },
       { name: 'Stakeholder Collaboration', mono: 'Sc' },
+    ],
+  },
+  {
+    id: 'domain',
+    title: 'Domain',
+    subtitle: 'Retail Banking — Lending',
+    skills: [
+      { name: 'Retail Banking', mono: 'Rb', note: 'Current' },
+      { name: 'Lending', mono: 'Ln' },
+      { name: 'Lead Management', mono: 'Lm' },
+      { name: 'Contact Point Verification', mono: 'Cp' },
+      { name: 'User Management & IAM', mono: 'Ia' },
+    ],
+  },
+  {
+    id: 'tools',
+    title: 'Tools',
+    subtitle: 'Delivery, APIs, process & dashboards',
+    skills: [
+      { name: 'Jira', mono: 'Ji', note: 'Daily' },
+      { name: 'Confluence', mono: 'Cf' },
+      { name: 'Postman', mono: 'Pm' },
+      { name: 'Swagger', mono: 'Sw' },
+      { name: 'Power BI', mono: 'Pb' },
+      { name: 'Tableau', mono: 'Tb' },
+      { name: 'Draw.io', mono: 'Dr' },
+      { name: 'Visio', mono: 'Vs' },
+      { name: 'Lucidchart', mono: 'Lc' },
     ],
   },
   {
@@ -365,15 +446,23 @@ export const skillEvidence: Record<string, string[]> = {
   'KPI Tracking': ['Data-driven process improvements — Nucleus Software'],
   'Customer Segmentation': ['Year-wise cohort comparison — Social Anxiety Analytics'],
   'Hypothesis Testing': ['Year-wise differences — Social Anxiety Analytics'],
-  'Business Requirements': ['CPV & LEAD workflows — Nucleus Software'],
+  'Business Requirements': ['Lead Management — Nucleus Software'],
   'API Requirements': ['CPV & LEAD workflows — Nucleus Software'],
   'Functional Specifications': ['CPV & LEAD workflows — Nucleus Software'],
-  'User Stories': ['CPV & LEAD workflows — Nucleus Software'],
+  'User Stories': ['Lead Management', 'Contact Point Verification'],
   'Process Flows': ['Workflow documentation — Nucleus Software'],
   'Traceability Matrices': ['Requirement traceability — Nucleus Software'],
-  'ATDD Scenarios': ['Test automation support — Nucleus Software'],
+  'ATDD (Given-When-Then)': ['Lead Management', 'Contact Point Verification'],
+  'Functional Testing': ['Bug identification with PQM — Contact Point Verification'],
+  'Product Documentation': ['Product write-up — Contact Point Verification'],
+  'Customer Demos': ['Contact Point Verification'],
+  'Retail Banking': ['Nucleus Software — lending product'],
+  Lending: ['Lead Management', 'Contact Point Verification', 'User Management & IAM'],
+  'Lead Management': ['Backend module, end to end — Nucleus Software'],
+  'Contact Point Verification': ['Stories, GWT, testing & demos — Nucleus Software'],
+  'User Management & IAM': ['Current work — Nucleus Software'],
   Agile: ['Product Owners, Developers & QA — Nucleus Software'],
-  'Stakeholder Collaboration': ['Product Owners, Developers, QA & stakeholders — Nucleus Software'],
+  'Stakeholder Collaboration': ['Stakeholders & Product Managers — Lead Management', 'PQM team & customers — CPV'],
   SQL: ['Lending workflow analysis — Nucleus Software'],
   'Advanced Excel': ['Lending workflow analysis — Nucleus Software'],
   EDA: ['Social Anxiety Analytics'],
@@ -506,23 +595,23 @@ export const seasons: Season[] = [
     number: 4,
     title: 'The Analyst',
     period: '2025 – Present',
-    synopsis: 'Solutions Analyst at Nucleus Software, Noida — shaping CPV and LEAD workflows for a lending platform.',
+    synopsis: 'Solutions Analyst at Nucleus Software, Noida — Retail Banking lending: Lead Management, Contact Point Verification and now User Management & IAM.',
     episodes: [
       {
         code: 'S04 E01',
-        title: 'The Translator',
-        description: 'Turning business requirements for CPV and LEAD workflows into API requirements, functional specifications and user stories.',
-        tags: ['API Requirements', 'User Stories'],
-        runtime: 'Jul 2025 – Present',
+        title: 'The Lead',
+        description: 'Backend Lead Management, end to end — business requirements, user stories and ATDD, with stakeholders and Product Managers.',
+        tags: ['Lead Management', 'User Stories', 'ATDD'],
+        runtime: 'Shipped',
         palette: ocean,
       },
       {
         code: 'S04 E02',
-        title: 'The Collaborator',
-        description: 'Working with Product Owners, Developers, QA and stakeholders in Agile to define BRs, data flows and API integrations.',
-        tags: ['Agile', 'Data Flows'],
-        runtime: 'Nucleus Software',
-        palette: violet,
+        title: 'The Verifier',
+        description: 'Contact Point Verification — user stories, testing and bug triage with PQM, Given-When-Then ATDD, the product write-up and customer demos.',
+        tags: ['CPV', 'GWT', 'Customer Demos'],
+        runtime: 'Shipped',
+        palette: jade,
       },
       {
         code: 'S04 E03',
@@ -534,11 +623,11 @@ export const seasons: Season[] = [
       },
       {
         code: 'S04 E04',
-        title: 'The Documenter',
-        description: 'Process flows, workflow documentation, traceability matrices and ATDD scenarios for solution design and test automation.',
-        tags: ['Process Flows', 'ATDD'],
-        runtime: 'Nucleus Software',
-        palette: jade,
+        title: 'The Gatekeeper',
+        description: 'User Management & IAM — identity and access management for the whole product.',
+        tags: ['IAM', 'User Management'],
+        runtime: 'Now filming',
+        palette: violet,
       },
     ],
   },
@@ -563,15 +652,15 @@ export const seasons: Season[] = [
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 
 export const topPicks: TopPick[] = [
-  { label: 'Current role', title: 'Solutions Analyst', detail: 'Nucleus Software • Lending platform', palette: ocean },
+  { label: 'Current role', title: 'Solutions Analyst', detail: 'Retail Banking • Lending', palette: ocean },
+  { label: 'Shipped', title: 'Lead Management', detail: 'Backend • BRs → stories → ATDD', palette: ocean },
+  { label: 'Shipped', title: 'CPV', detail: 'GWT • PQM • customer demos', palette: jade },
+  { label: 'Now filming', title: 'User Mgmt & IAM', detail: 'Across the whole product', palette: violet },
   { label: 'Product analytics', title: 'Funnels & A/B', detail: 'Retention • Segmentation • RCA', palette: crimson },
-  { label: 'Business analysis', title: 'Requirements → APIs', detail: 'CPV & LEAD workflows', palette: violet },
-  { label: 'Daily tools', title: 'SQL + Excel', detail: 'Bottlenecks → process improvements', palette: amber },
-  { label: 'Agile delivery', title: 'Cross-Functional', detail: 'POs • Developers • QA • Stakeholders', palette: jade },
+  { label: 'Daily tools', title: 'SQL + Jira', detail: 'Excel • Power BI • Confluence • Postman', palette: amber },
   { label: 'National rank', title: 'GATE DA', detail: 'Top 2% nationally • 2025', palette: jade },
   { label: 'AI in the toolkit', title: 'LLM Insights', detail: 'BS thesis • BERT • FastAPI', palette: crimson },
   { label: 'Alma mater', title: 'IISER Bhopal', detail: 'BS Data Science & Engineering', palette: violet },
-  { label: 'Admission', title: 'Top 10%', detail: 'IISER Aptitude Test • 2021', palette: ocean },
   { label: 'On the mat', title: 'Kabaddi Gold', detail: 'IISM', palette: amber },
 ];
 
@@ -580,17 +669,17 @@ export const hero = {
   badge: 'PRODUCT',
   meta: ['Solutions Analyst · Nucleus', 'BS Data Science · IISER', 'GATE DA · Top 2%'],
   chips: [
-    { text: 'Funnels · A/B · Retention', sub: 'Product analytics' },
-    { text: 'Requirements → APIs', sub: 'Business analysis' },
+    { text: 'Stories → ATDD (GWT)', sub: 'Business analysis' },
+    { text: 'Retail Banking · Lending', sub: 'Domain' },
     { text: 'SQL · Excel · Python', sub: 'Analytics stack' },
   ],
 };
 
 /** About Me fact grid. */
 export const aboutFacts = [
-  { k: 'Now', v: 'Solutions Analyst', s: 'Nucleus Software Exports Ltd. · Noida' },
+  { k: 'Now', v: 'Solutions Analyst · Retail Banking', s: 'Nucleus Software · Lending — Lead Mgmt, CPV, IAM' },
   { k: 'Open to', v: 'Product & Business roles', s: 'Product Analyst · Sr. Data Analyst · APM · BA' },
-  { k: 'Toolkit', v: 'SQL, Excel & Python', s: 'with R, Pandas, KPI tracking & A/B testing' },
+  { k: 'Toolkit', v: 'SQL, Excel & Power BI', s: 'with Jira, Confluence, Postman, Swagger & Python' },
   { k: 'Studied', v: 'BS, Data Science & Engineering', s: 'IISER Bhopal · 2021 – 2025 · ' + profile.location },
 ];
 
@@ -608,13 +697,13 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Now',
     title: 'Product & Business Analyst',
-    lines: ['Solutions Analyst · Nucleus Software · July 2025 – Present', 'Business requirements → API specs, user stories & product workflows', 'SQL & Excel to find bottlenecks and drive process improvements'],
+    lines: ['Solutions Analyst · Nucleus Software · Retail Banking — Lending', 'Shipped: Lead Management (backend) · Contact Point Verification', 'Now: User Management & IAM across the product'],
   },
   {
     kicker: 'Skills',
     title: 'Data → Decisions.',
-    lines: ['Funnels · Retention · A/B testing · RCA · Segmentation', 'SQL · Advanced Excel · Python · R · KPI tracking'],
-    chips: ['SQL', 'Excel', 'Python', 'A/B Testing', 'Funnels', 'Agile'],
+    lines: ['Funnels · Retention · A/B testing · RCA · Segmentation', 'SQL · Advanced Excel · Power BI · Tableau · Python', 'Jira · Confluence · Postman · Swagger · Draw.io'],
+    chips: ['SQL', 'Power BI', 'Jira', 'Postman', 'A/B Testing', 'Funnels'],
   },
   {
     kicker: 'Education',

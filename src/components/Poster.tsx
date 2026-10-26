@@ -40,6 +40,44 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
           </radialGradient>
         </defs>
         <circle cx="290" cy="120" r="130" fill={`url(#g-${project.id})`} />
+        {project.motif === 'funnel' && (
+          <g fill="none" stroke={a}>
+            {[0, 1, 2, 3].map((i) => {
+              const w = 170 - i * 36;
+              return (
+                <rect key={i} x={290 - w / 2} y={50 + i * 40} width={w} height="30" rx="6" strokeWidth="1.8" strokeOpacity={0.5 + i * 0.15} fill={a} fillOpacity={0.08 + i * 0.08} />
+              );
+            })}
+            {[0, 1, 2, 3].map((i) => (
+              <text key={i} x={290} y={70 + i * 40} textAnchor="middle" fontFamily="Inter" fontSize="10" letterSpacing="2" fill={a} stroke="none" fillOpacity="0.85">
+                {['LEAD', 'QUALIFY', 'VERIFY', 'SANCTION'][i]}
+              </text>
+            ))}
+            <path d="M290 212 v22 M282 226 l8 8 l8 -8" strokeWidth="2" strokeOpacity="0.8" strokeLinecap="round" strokeLinejoin="round" />
+          </g>
+        )}
+        {project.motif === 'verify' && (
+          <g fill="none" stroke={a}>
+            <path d="M290 40 C 252 40, 226 68, 226 102 C 226 146, 290 206, 290 206 C 290 206, 354 146, 354 102 C 354 68, 328 40, 290 40 Z" strokeWidth="2" strokeOpacity="0.85" fill={a} fillOpacity="0.1" />
+            <path d="M266 102 l16 16 l32 -34" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <ellipse cx="290" cy="226" rx="70" ry="12" strokeWidth="1.4" strokeOpacity="0.5" strokeDasharray="5 5" />
+            <text x="210" y="258" fontFamily="Inter" fontSize="10" letterSpacing="2" fill={a} stroke="none" fillOpacity="0.75">GIVEN · WHEN · THEN</text>
+          </g>
+        )}
+        {project.motif === 'lock' && (
+          <g fill="none" stroke={a}>
+            <path d="M250 112 V 86 C 250 60, 330 60, 330 86 V 112" strokeWidth="6" strokeOpacity="0.85" strokeLinecap="round" />
+            <rect x="230" y="110" width="120" height="96" rx="14" strokeWidth="2" fill={a} fillOpacity="0.16" />
+            <circle cx="290" cy="148" r="11" fill={a} stroke="none" />
+            <path d="M290 156 v22" strokeWidth="6" strokeLinecap="round" />
+            {[0, 1, 2].map((i) => (
+              <g key={i} transform={`translate(${372} ${92 + i * 44})`}>
+                <circle r="10" strokeWidth="1.6" strokeOpacity={0.4 + i * 0.2} />
+                <path d="M-14 20 C -14 10, 14 10, 14 20" strokeWidth="1.6" strokeOpacity={0.4 + i * 0.2} />
+              </g>
+            ))}
+          </g>
+        )}
         {project.motif === 'document' && (
           <g transform="translate(236 34)" fill="none" stroke={a}>
             <path d="M0 0 H86 L118 32 V170 H0 Z" strokeWidth="2" strokeOpacity="0.85" />
