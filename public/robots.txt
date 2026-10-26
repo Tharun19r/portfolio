@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-phi-ruddy-l8w4cwccbb.vercel.app/sitemap.xml
