@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { projects, type Project } from '../data/portfolio';
+import { profile, projects, type Project } from '../data/portfolio';
 import { useScrollLock } from '../hooks/smoothScroll';
 import { EASE, Magnetic } from './fx';
 import { ProjectArt } from './Poster';
@@ -67,7 +67,7 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
             </button>
             <div className="absolute inset-x-0 bottom-0 px-5 pb-6 sm:px-10">
               <motion.p className="mb-2 flex items-center gap-2 text-[11px] font-bold tracking-[0.34em] text-bone/80" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-                <span className="font-display text-xl tracking-normal text-crimson-2">S</span> ORIGINAL
+                <span className="font-display text-xl tracking-normal text-crimson-2">{profile.monogram}</span> ORIGINAL
               </motion.p>
               <motion.h2
                 id={`title-${project.id}-modal`}
@@ -108,6 +108,7 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
             )}
 
             {/* impact */}
+            {project.metrics.length > 0 && (
             <motion.section variants={block} className="mt-12">
               <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">Result / Impact</h3>
               <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-3 lg:grid-cols-5">
@@ -127,6 +128,7 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                 ))}
               </div>
             </motion.section>
+            )}
 
             <div className="mt-12 grid gap-10 lg:grid-cols-[3fr_2fr]">
               <motion.section variants={block}>

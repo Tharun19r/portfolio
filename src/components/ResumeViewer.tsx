@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { achievements, certifications, education, experience, profile, projects, skillCategories } from '../data/portfolio';
+import { achievements, certifications, education, experience, profile, projects, resumeStats, skillCategories } from '../data/portfolio';
 import { EASE, Magnetic, SectionHeading } from './fx';
 
 /** THE FULL STORY — a designed resume preview plus view / download actions. */
@@ -22,7 +22,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="font-serif text-3xl italic leading-tight text-bone">Every episode, on one page.</p>
           <p className="mt-3 text-sm leading-relaxed text-mist">
-            Education, training, projects, achievements and {certifications.length} certifications — view it here or take a copy with you.
+            Education, experience, projects and achievements — view it here or take a copy with you.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Magnetic className="w-full">
@@ -38,7 +38,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
             <Magnetic className="w-full">
               <a
                 href={profile.resumePdf}
-                download="Sushmita_Dasari_Resume.pdf"
+                download={profile.resumePdf.split('/').pop()}
                 data-cursor="link"
                 className="glass flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-6 text-[15px] font-semibold text-bone transition hover:bg-white/15"
               >
@@ -47,11 +47,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
             </Magnetic>
           </div>
           <dl className="mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-xl bg-white/10 text-center">
-            {[
-              { v: education[0].score.replace('CGPA ', ''), k: 'CGPA' },
-              { v: String(projects.length), k: 'Originals' },
-              { v: String(certifications.length), k: 'Certs' },
-            ].map((s) => (
+            {resumeStats.map((s) => (
               <div key={s.k} className="bg-ink-2 px-2 py-4">
                 <dd className="font-display text-3xl leading-none text-bone">{s.v}</dd>
                 <dt className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-smoke">{s.k}</dt>
@@ -122,14 +118,20 @@ export function ResumeSheet() {
                 <p className="text-xs text-smoke">{e.period}</p>
               </div>
               <p className="text-xs text-mist">
-                {e.degree} · <span className="text-bone/80">{e.score}</span>
+                {e.degree}
+                {e.score && (
+                  <>
+                    {' · '}
+                    <span className="text-bone/80">{e.score}</span>
+                  </>
+                )}
               </p>
             </div>
           ))}
 
           <H>Work Experience</H>
           {experience.map((x) => (
-            <div key={x.company}>
+            <div key={x.company} className="mb-4">
               <div className="flex flex-wrap justify-between gap-x-3">
                 <p className="text-sm font-semibold text-bone">
                   {x.company} — {x.role}
@@ -182,12 +184,16 @@ export function ResumeSheet() {
             ))}
           </ul>
 
-          <H>Certifications</H>
-          <p className="text-xs leading-relaxed text-mist">
-            {Array.from(new Set(certifications.map((c) => c.issuer)))
-              .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
-              .join(' · ')}
-          </p>
+          {certifications.length > 0 && (
+            <>
+              <H>Certifications</H>
+              <p className="text-xs leading-relaxed text-mist">
+                {Array.from(new Set(certifications.map((c) => c.issuer)))
+                  .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
+                  .join(' · ')}
+              </p>
+            </>
+          )}
         </div>
       </div>
     </article>

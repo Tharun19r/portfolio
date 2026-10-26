@@ -60,7 +60,7 @@ export default function Navbar({ order, profileId, onSwitch }: { order: SectionI
       transition={{ duration: 0.45, ease: EASE }}
     >
       <div
-        className={`gutter flex h-16 items-center justify-between gap-6 transition-[background,backdrop-filter] duration-500 md:h-[72px] ${
+        className={`gutter box-content flex h-16 items-center pt-[env(safe-area-inset-top)] justify-between gap-6 transition-[background,backdrop-filter] duration-500 md:h-[72px] ${
           solid || mobileNav ? 'bg-ink/80 backdrop-blur-xl' : 'bg-gradient-to-b from-black/80 to-transparent'
         }`}
       >

@@ -40,52 +40,89 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
           </radialGradient>
         </defs>
         <circle cx="290" cy="120" r="130" fill={`url(#g-${project.id})`} />
-        {project.motif === 'shield' && (
-          <g transform="translate(232 40)" fill="none" stroke={a} strokeOpacity="0.85">
-            <path d="M58 0 L116 22 V78 C116 120 90 146 58 160 C26 146 0 120 0 78 V22 Z" strokeWidth="2" />
-            <path d="M58 16 L102 33 V78 C102 111 82 132 58 144 C34 132 14 111 14 78 V33 Z" strokeWidth="1" strokeOpacity="0.4" />
-            {[0, 1, 2, 3, 4].map((i) => (
-              <line key={i} x1="30" x2={i % 2 ? 72 : 86} y1={56 + i * 14} y2={56 + i * 14} strokeWidth="3" strokeLinecap="round" strokeOpacity={0.35 + i * 0.1} />
+        {project.motif === 'document' && (
+          <g transform="translate(236 34)" fill="none" stroke={a}>
+            <path d="M0 0 H86 L118 32 V170 H0 Z" strokeWidth="2" strokeOpacity="0.85" />
+            <path d="M86 0 V32 H118" strokeWidth="1.4" strokeOpacity="0.6" />
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              <g key={i}>
+                {(i === 2 || i === 5) && <rect x="12" y={46 + i * 16 - 7} width={i === 2 ? 92 : 70} height="12" rx="3" fill={a} fillOpacity="0.28" stroke="none" />}
+                <line x1="18" x2={i % 3 === 1 ? 78 : 100} y1={46 + i * 16} y2={46 + i * 16} strokeWidth="3" strokeLinecap="round" strokeOpacity={i === 2 || i === 5 ? 0.95 : 0.35} />
+              </g>
             ))}
-            <path d="M40 124 l12 12 l26 -28" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           </g>
         )}
-        {project.motif === 'flow' && (
+        {project.motif === 'detect' && (
           <g fill="none" stroke={a}>
-            <rect x="200" y="56" width="150" height="94" rx="12" strokeWidth="2" strokeOpacity="0.85" />
-            <rect x="214" y="72" width="28" height="20" rx="4" strokeOpacity="0.7" />
-            <line x1="214" x2="330" y1="124" y2="124" strokeWidth="3" strokeOpacity="0.4" strokeDasharray="18 8" />
-            <g transform="translate(176 196)" fontFamily="Inter" fontSize="10" fill={a} stroke="none" letterSpacing="2">
-              <circle cx="16" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" />
-              <path d="M34 16 h46" stroke={a} strokeWidth="2" />
-              <circle cx="96" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.8" />
-              <path d="M112 8 l38 -22 M112 24 l38 22" stroke={a} strokeWidth="2" strokeOpacity="0.6" />
-              <circle cx="166" cy="-18" r="10" fill={a} fillOpacity="0.8" />
-              <circle cx="166" cy="50" r="10" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.5" />
-            </g>
+            {[
+              { x: 214, y: 70, s: 1 },
+              { x: 300, y: 128, s: 0.8 },
+              { x: 236, y: 178, s: 0.65 },
+            ].map((f, i) => (
+              <g key={i} transform={`translate(${f.x} ${f.y}) scale(${f.s})`}>
+                <path d="M8 24 C 24 4, 60 4, 76 24 C 60 44, 24 44, 8 24 Z M76 24 L96 10 L96 38 Z" fill={a} fillOpacity="0.35" strokeWidth="1.5" strokeOpacity="0.9" />
+                <rect x="-6" y="-4" width="110" height="56" rx="3" strokeWidth={2 / f.s} strokeOpacity="0.9" strokeDasharray={i ? '6 5' : undefined} />
+                <text x="-6" y="-10" fontFamily="Inter" fontSize={11 / f.s} fill={a} stroke="none" letterSpacing="1">{`fish ${(0.94 - i * 0.07).toFixed(2)}`}</text>
+              </g>
+            ))}
           </g>
         )}
-        {project.motif === 'tenants' && (
+        {project.motif === 'city' && (
           <g fill="none" stroke={a}>
-            {[0, 1, 2].map((r) =>
-              [0, 1, 2, 3].map((c) => (
-                <rect
-                  key={`${r}-${c}`}
-                  x={196 + c * 44}
-                  y={50 + r * 44}
-                  width="34"
-                  height="34"
-                  rx="7"
-                  strokeWidth="1.6"
-                  strokeOpacity={0.25 + ((r + c) % 3) * 0.25}
-                  fill={(r + c) % 4 === 0 ? a : 'none'}
-                  fillOpacity="0.25"
-                />
-              )),
-            )}
-            <path d="M188 200 h190" strokeWidth="2" strokeOpacity="0.7" />
-            <path d="M188 214 h190" strokeWidth="1" strokeOpacity="0.35" />
-            <path d="M188 228 h190" strokeWidth="1" strokeOpacity="0.2" />
+            {[
+              [196, 40, 120],
+              [236, 30, 170],
+              [270, 44, 100],
+              [318, 28, 150],
+              [350, 40, 80],
+            ].map(([x, w, h], i) => (
+              <g key={i}>
+                <rect x={x} y={230 - h} width={w} height={h} strokeWidth="1.8" strokeOpacity={0.5 + (i % 2) * 0.4} fill={a} fillOpacity={0.06 + (i % 3) * 0.05} />
+                <path d={`M${x} ${230 - h} l10 -8 h${w} l-10 8 M${x + w} ${230 - h} l10 -8 v${h} l-10 8`} strokeWidth="1" strokeOpacity="0.45" />
+              </g>
+            ))}
+            <path d="M180 230 h210" strokeWidth="2" strokeOpacity="0.8" />
+            <path d="M180 244 h210 M180 258 h210" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="4 6" />
+          </g>
+        )}
+        {project.motif === 'domains' && (
+          <g fill={a}>
+            {Array.from({ length: 40 }, (_, i) => {
+              const t = (i * 137.508 * Math.PI) / 180;
+              const r = 6 + ((i * 29) % 34);
+              const right = i % 2 === 1;
+              return <circle key={i} cx={(right ? 320 : 230) + Math.cos(t) * r} cy={120 + Math.sin(t) * r} r={right ? 2.6 : 3} fillOpacity={right ? 0.35 : 0.85} />;
+            })}
+            <path d="M262 176 C 280 200, 300 200, 318 176" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.8" />
+            <path d="M310 170 l8 6 l-9 4" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.8" strokeLinejoin="round" />
+            <text x="208" y="214" fontFamily="Inter" fontSize="10" letterSpacing="2" fillOpacity="0.7">SOURCE</text>
+            <text x="300" y="214" fontFamily="Inter" fontSize="10" letterSpacing="2" fillOpacity="0.7">TARGET</text>
+          </g>
+        )}
+        {project.motif === 'chart' && (
+          <g fill="none" stroke={a}>
+            <path d="M196 230 V60 M196 230 H380" strokeWidth="1.6" strokeOpacity="0.6" />
+            {[70, 110, 90, 140].map((h, i) => (
+              <rect key={i} x={214 + i * 42} y={230 - h} width="26" height={h} rx="3" fill={a} fillOpacity={0.2 + i * 0.12} strokeWidth="1.4" strokeOpacity="0.8" />
+            ))}
+            <path d="M214 150 C 250 120, 270 150, 300 108 S 350 80, 372 70" strokeWidth="2.4" strokeOpacity="0.95" />
+            {[[214, 150], [258, 136], [300, 108], [340, 86], [372, 70]].map(([x, y]) => (
+              <circle key={x} cx={x} cy={y} r="4" fill={a} stroke="none" />
+            ))}
+          </g>
+        )}
+        {project.motif === 'points' && (
+          <g fill={a}>
+            {Array.from({ length: 64 }, (_, i) => {
+              // deterministic scatter in two clusters, denser near the boundary between them
+              const t = (i * 137.508) % 360;
+              const r = 18 + ((i * 53) % 60);
+              const cx = (i % 2 ? 250 : 320) + Math.cos((t * Math.PI) / 180) * r;
+              const cy = 130 + Math.sin((t * Math.PI) / 180) * r * 0.75;
+              const edge = Math.abs(cx - 285) < 14;
+              return <circle key={i} cx={cx} cy={cy} r={edge ? 3.2 : 2} fillOpacity={edge ? 0.95 : 0.4} />;
+            })}
+            <path d="M285 50 C 275 100, 298 160, 285 215" fill="none" stroke={a} strokeWidth="1.6" strokeDasharray="6 6" strokeOpacity="0.8" />
           </g>
         )}
       </svg>
@@ -98,7 +135,7 @@ export function SeriesMark({ className = '' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-1.5 ${className}`}>
       <svg viewBox="0 0 24 32" className="h-[1.1em] w-auto" aria-hidden>
-        <path d="M18 6c-1.8-1.8-4-2.6-6.5-2.6C7.6 3.4 5 5.6 5 9c0 7.6 14 4.6 14 11.6 0 3-2.8 5-6.4 5-3 0-5.4-1.2-7.2-3" fill="none" stroke="#e5132b" strokeWidth="4" strokeLinecap="round" />
+        <path d="M4 6h16M12 6v22" fill="none" stroke="#e5132b" strokeWidth="4" strokeLinecap="round" />
       </svg>
       <span className="font-sans text-[0.62em] font-bold tracking-[0.36em] text-mist">SERIES</span>
     </span>

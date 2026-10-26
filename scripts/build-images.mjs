@@ -20,11 +20,15 @@ const alpha = await sharp('pic.png')
 
 const rgb = await sharp('pic1.jpeg').removeAlpha().raw().toBuffer();
 const rgba = Buffer.alloc(width * height * 4);
+// Fade the outer 12% on each side so shoulders cropped by the photo frame don't end in hard vertical edges.
+const ramp = Math.round(width * 0.12);
 for (let i = 0; i < width * height; i++) {
+  const x = i % width;
+  const edge = Math.min(1, Math.min(x, width - 1 - x) / ramp);
   rgba[i * 4] = rgb[i * 3];
   rgba[i * 4 + 1] = rgb[i * 3 + 1];
   rgba[i * 4 + 2] = rgb[i * 3 + 2];
-  rgba[i * 4 + 3] = alpha[i];
+  rgba[i * 4 + 3] = Math.round(alpha[i] * edge * edge * (3 - 2 * edge));
 }
 const cutout = await sharp(rgba, { raw: { width, height, channels: 4 } }).png().toBuffer();
 
@@ -45,9 +49,9 @@ await sharp({ create: { width: 1200, height: 630, channels: 4, background: '#070
     { input: portrait, gravity: 'southeast' },
     {
       input: Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-        <text x="72" y="300" font-family="Impact, 'Arial Narrow', sans-serif" font-size="128" fill="#f4f1ec" letter-spacing="4">SUSHMITA</text>
+        <text x="72" y="300" font-family="Impact, 'Arial Narrow', sans-serif" font-size="128" fill="#f4f1ec" letter-spacing="4">THARUN</text>
         <text x="78" y="352" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#ff3d5a" letter-spacing="16">THE SERIES</text>
-        <text x="78" y="420" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="18" fill="#a7a6ad" letter-spacing="5">FULL-STACK DEVELOPER • AI / ML • JAVA</text>
+        <text x="78" y="420" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="18" fill="#a7a6ad" letter-spacing="5">PRODUCT ANALYTICS • BUSINESS ANALYSIS • DATA + AI</text>
       </svg>`),
     },
   ])

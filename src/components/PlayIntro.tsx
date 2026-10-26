@@ -112,7 +112,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
 
       {/* progress bars */}
       {phase !== 'zoom' && (
-        <div className="absolute inset-x-0 top-0 z-20 flex gap-1.5 px-4 pt-4 sm:px-10 sm:pt-6">
+        <div className="absolute inset-x-0 top-0 z-20 flex gap-1.5 px-4 pt-[max(1rem,env(safe-area-inset-top))] sm:px-10 sm:pt-6">
           {introSlides.map((s, i) => (
             <div key={s.kicker} className="h-[3px] flex-1 overflow-hidden rounded bg-white/15">
               <motion.div

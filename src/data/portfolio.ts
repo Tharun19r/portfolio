@@ -1,5 +1,5 @@
 /**
- * Central portfolio data — generated from Sushmita's resume (Sushmita_dasari.pdf).
+ * Central portfolio data — generated from Tharun's resume (Ramavath Tharun.pdf).
  * Every fact on the site comes from this file. Update it here and the whole site follows.
  * Nothing here should be added unless it appears on the resume.
  */
@@ -7,58 +7,90 @@
 export type Palette = { from: string; via: string; to: string; accent: string };
 
 export const profile = {
-  fullName: 'Dasari Venkata Ratna Sri Sushmita',
-  displayName: 'Sushmita Dasari',
-  firstName: 'SUSHMITA',
+  fullName: 'Ramavath Tharun',
+  displayName: 'Ramavath Tharun',
+  shortName: 'Tharun',
+  firstName: 'THARUN',
+  /** Single letter used as the series logo and on Original badges. */
+  monogram: 'T',
   seriesTag: 'THE SERIES',
   /** Fictional studio card shown at the very start of the opening sequence. */
-  originalLabel: 'A DASARI ORIGINAL',
-  role: 'Full-Stack Developer',
-  tagline: ['Full-Stack Developer', 'AI / ML', 'Java'],
+  originalLabel: 'A RAMAVATH ORIGINAL',
+  role: 'Product & Business Analyst',
+  tagline: ['Product Analytics', 'Business Analysis', 'Data + AI'],
+  /** Roles the portfolio is positioned for. */
+  targetRoles: ['Product Analyst', 'Senior Data Analyst', 'Associate Product Manager', 'Business Analyst'],
   intro:
-    'A B.Tech Artificial Intelligence & Machine Learning student (CGPA 9.10) and full-stack developer building AI-powered platforms, payment systems and multi-tenant SaaS with Java, Python, React, Node.js and Docker.',
-  location: 'Surampalem, Andhra Pradesh',
-  email: 'sushmitadasari17@gmail.com',
+    'A Solutions Analyst at Nucleus Software and a Data Science & Engineering graduate from IISER Bhopal, translating business requirements into API specifications and product workflows, identifying process bottlenecks through SQL and Excel, and collaborating with cross-functional teams to deliver effective, data-driven solutions.',
+  location: 'Hyderabad, Telangana',
+  email: 'ramavaththarun73@gmail.com',
   links: {
-    linkedin: 'https://www.linkedin.com/in/sushmita-dasari-227a40284/',
-    github: 'https://github.com/Sushmitadasari',
+    linkedin: 'https://www.linkedin.com/in/ramavath-tharun-493496263/',
+    github: 'https://github.com/Tharun19r',
   },
-  resumePdf: '/assets/Sushmita_Dasari_Resume.pdf',
+  resumePdf: '/assets/Ramavath_Tharun_Resume.pdf',
   portrait: {
     src: '/assets/portrait-720.webp',
     srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
-    alt: 'Portrait of Sushmita Dasari',
+    alt: 'Portrait of Ramavath Tharun',
   },
-  interests: ['System Design', 'Cloud Computing (AWS)', 'Machine Learning'],
+  focus: ['Product Analytics', 'Business Analysis', 'Data-Driven Decisions', 'Process Improvement', 'AI for Product Insights'],
 };
 
 export const education = [
   {
-    school: 'Aditya Engineering College',
-    place: 'Surampalem',
-    degree: 'Bachelor of Technology — Artificial Intelligence and Machine Learning',
-    period: 'October 2023 – Present',
-    score: 'CGPA 9.10',
+    school: 'Indian Institute of Science Education and Research',
+    short: 'IISER Bhopal',
+    place: 'Bhopal',
+    degree: 'BS — Data Science and Engineering',
+    period: '2021 – 2025',
+    score: '',
   },
   {
     school: 'Sri Chaitanya Junior College',
-    place: 'Kakinada',
-    degree: 'BIEAP — MPC',
-    period: 'June 2021 – May 2023',
-    score: 'Score 925/1000',
+    short: 'Sri Chaitanya',
+    place: 'Telangana',
+    degree: 'State Board of Intermediate Education, Telangana',
+    period: '2019 – 2021',
+    score: 'Percentage 97%',
+  },
+  {
+    school: 'Bhashayam Blooms',
+    short: 'Bhashayam Blooms',
+    place: 'Telangana',
+    degree: 'Telangana Board of Secondary Education',
+    period: '2019',
+    score: 'CGPA 9.7',
   },
 ];
 
 export const experience = [
   {
-    company: 'Technical Hub Pvt Ltd',
-    role: 'Trainee',
-    place: 'Surampalem, AP',
-    period: 'May 2025 – June 2026',
+    company: 'Nucleus Software Exports Ltd.',
+    role: 'Solutions Analyst',
+    place: 'Noida',
+    period: 'July 2025 – Present',
     points: [
-      'Completed one year of intensive Full-Stack Development (FSD) training covering frontend, backend, database integration, and deployment workflows.',
-      'Developed responsive and functional web applications by implementing user interfaces, server-side logic, and database connectivity.',
-      'Deployed and managed web applications while applying version control, debugging, and end-to-end development practices.',
+      'Contributed to the end-to-end development of CPV and LEAD workflows for a lending platform by translating business requirements into API requirements, functional specifications and user stories.',
+      'Collaborated with Product Owners, Developers, QA teams and stakeholders in an Agile environment to define BRs, data flows and API integrations, and deliver solutions aligned with business objectives.',
+      'Analyzed lending workflows using SQL and Excel to identify bottlenecks, manual touchpoints and process inefficiencies, enabling data-driven process improvements.',
+      'Created process flows, workflow documentation, traceability matrices and ATDD scenarios to support solution design, requirement traceability, test automation and process standardization.',
+    ],
+  },
+  {
+    company: 'Underwater AI Lab, IIT Jammu',
+    role: 'Summer Research Fellow',
+    place: 'Jammu',
+    period: 'May 2024 – July 2024',
+    points: ['Collaborated on underwater video analysis, developing a YOLOv5 deep learning pipeline to detect and track fish in challenging aquatic environments.'],
+  },
+  {
+    company: 'System and Informatics Lab, IISER Bhopal',
+    role: 'Data Analyst Researcher',
+    place: 'Bhopal',
+    period: 'May 2023 – Nov 2023',
+    points: [
+      'Conducted data analysis and ML modeling on social anxiety across college batches using SVM, Logistic Regression and KNN, identifying year-wise differences and achieving strong assessment performance.',
     ],
   },
 ];
@@ -68,106 +100,121 @@ export type Metric = { value: string; label: string };
 export type Project = {
   id: string;
   title: string;
+  /** Badge shown on the card — a year when the resume gives one. */
   year: string;
   genre: string;
   logline: string;
   stack: string[];
   build: string[];
   features: string[];
+  /** Leave empty when the resume gives no figures — the impact block is hidden. */
   metrics: Metric[];
   /** Omit when the repository isn't public — the GitHub button is hidden instead of linking to a 404. */
   github?: string;
   palette: Palette;
-  motif: 'shield' | 'flow' | 'tenants';
+  motif: 'document' | 'detect' | 'city' | 'points' | 'domains' | 'chart';
 };
+
+const crimson: Palette = { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' };
+const amber: Palette = { from: '#1c1003', via: '#6b3c06', to: '#0a0806', accent: '#ffb547' };
+const ocean: Palette = { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' };
+const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' };
+const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
 
 export const projects: Project[] = [
   {
-    id: 'policyguard-ai',
-    title: 'PolicyGuard AI',
-    year: '2026',
-    genre: 'AI • NLP • LLM',
-    logline: 'An AI-powered policy analysis platform across web, browser extension, mobile and desktop applications.',
-    stack: ['Python', 'NLP', 'LLM', 'REST API'],
+    id: 'herbal-llm',
+    title: 'Herbal Literature LLM',
+    year: '2025',
+    genre: 'NLP • LLM • Biomedical',
+    logline: 'BS thesis — identifying the potential of ginger for arthritis treatment in the research literature using an LLM.',
+    stack: ['Python', 'BERT', 'LLM', 'FastAPI', 'Gradio'],
     build: [
-      'Built an AI-powered policy analysis platform across web, browser extension, mobile, and desktop applications, processing 500+ policy documents with 92% accuracy and reducing manual review time by 60% across 8 policy categories.',
-      'Engineered LLM-based Q&A, key-information extraction, and REST API integration for 10+ document types, enabling real-time policy insights and reducing decision turnaround time by 45%.',
+      'Designed and executed an advanced NLP and Machine Learning tool to identify Indian herbs with potential therapeutic efficacy, leveraging research articles for comprehensive biomedical analysis.',
+      'Built an interactive AI-powered web application using Gradio and FastAPI, enabling users to upload PDF files and extract structured biomedical information using BERT-based weights and sentence highlighting.',
     ],
     features: [
-      'LLM-based Q&A over policy documents',
-      'Key-information extraction',
-      'REST API integration for 10+ document types',
-      'Web, browser extension, mobile & desktop apps',
-      'Real-time policy insights',
+      'PDF upload & parsing',
+      'Structured biomedical information extraction',
+      'BERT-based weights',
+      'Sentence highlighting',
+      'Gradio front end on a FastAPI back end',
     ],
-    metrics: [
-      { value: '500+', label: 'policy documents processed' },
-      { value: '92%', label: 'accuracy' },
-      { value: '60%', label: 'less manual review time' },
-      { value: '45%', label: 'faster decision turnaround' },
-      { value: '8', label: 'policy categories' },
-    ],
-    // The resume links to https://github.com/Sushmitadasari/PolicyGuard-AI, which is not public yet (404).
-    // Add `github: 'https://github.com/Sushmitadasari/PolicyGuard-AI',` back once the repo is public.
-    palette: { from: '#2a0610', via: '#7a0f24', to: '#0b0710', accent: '#ff3d5a' },
-    motif: 'shield',
+    metrics: [],
+    palette: crimson,
+    motif: 'document',
   },
   {
-    id: 'payment-gateway',
-    title: 'Payment Gateway System',
-    year: '2026',
-    genre: 'Full-Stack • Fintech • Microservices',
-    logline: 'A full-stack UPI & card payment gateway built around a strict payment state machine.',
-    stack: ['Node.js', 'Express', 'PostgreSQL', 'React', 'Docker'],
-    build: [
-      'Built full-stack UPI & card payment gateway processing 1,000+ transactions at 99.8% uptime with a strict payment state machine (processing → success/failed).',
-      'Dockerized microservice architecture cut deployment setup by 70%; backend optimizations reduced API response time by 40% and tripled throughput under load.',
-    ],
-    features: [
-      'UPI & card payments',
-      'Strict payment state machine (processing → success / failed)',
-      'Dockerized microservice architecture',
-      'Backend optimizations for load',
-    ],
-    metrics: [
-      { value: '1,000+', label: 'transactions processed' },
-      { value: '99.8%', label: 'uptime' },
-      { value: '70%', label: 'less deployment setup' },
-      { value: '40%', label: 'faster API response' },
-      { value: '3×', label: 'throughput under load' },
-    ],
-    github: 'https://github.com/Sushmitadasari/Payment-gateway-system-Project',
-    palette: { from: '#1a0d02', via: '#8a4a07', to: '#0a0806', accent: '#ffb547' },
-    motif: 'flow',
+    id: 'underwater-fish-tracking',
+    title: 'Underwater Fish Tracking',
+    year: '2024',
+    genre: 'Computer Vision • Deep Learning',
+    logline: 'A YOLOv5 pipeline that detects and tracks fish in challenging underwater video — built at the Underwater AI Lab, IIT Jammu.',
+    stack: ['Python', 'YOLOv5', 'Deep Learning'],
+    build: ['Collaborated on underwater video analysis, developing a YOLOv5 deep learning pipeline to detect and track fish in challenging aquatic environments.'],
+    features: ['Fish detection in underwater video', 'Multi-frame tracking', 'Robust to challenging aquatic conditions'],
+    metrics: [],
+    palette: ocean,
+    motif: 'detect',
   },
   {
-    id: 'multi-tenant-saas',
-    title: 'Multi-Tenant SaaS Platform',
-    year: '2026',
-    genre: 'SaaS • Security • DevOps',
-    logline: 'Shared-database multi-tenancy with strict tenant isolation and 4-level JWT/RBAC.',
-    stack: ['Node.js', 'React', 'PostgreSQL', 'Docker Compose'],
+    id: 'urban-scene-generation',
+    title: '3D Urban Scene Generation',
+    year: 'IISER',
+    genre: '3D Vision • Generative',
+    logline: 'A pipeline that generates 3D urban scenes from layout priors, validated on IISER Bhopal’s 3D structure datasets.',
+    stack: ['Python', 'Deep Learning', '3D Vision'],
+    build: ['Developed a 3D urban scene generation pipeline using layout priors, validating results on IISER Bhopal’s 3D structure datasets.'],
+    features: ['Layout-prior–driven generation', 'Validation on IISER Bhopal 3D structure datasets'],
+    metrics: [],
+    palette: violet,
+    motif: 'city',
+  },
+  {
+    id: 'point-cloud-segmentation',
+    title: 'Boundary-Aware Point Clouds',
+    year: 'IISER',
+    genre: '3D Vision • Segmentation',
+    logline: 'Contrastive boundary learning for point cloud segmentation, sharpening accuracy near object edges.',
+    stack: ['Python', 'PyTorch', 'Point Clouds'],
+    build: ['Applied contrastive boundary learning for point cloud segmentation, enhancing accuracy near object edges using geometric priors and neighborhood features.'],
+    features: ['Contrastive boundary learning', 'Geometric priors', 'Neighborhood features', 'Better accuracy near object edges'],
+    metrics: [],
+    palette: jade,
+    motif: 'points',
+  },
+  {
+    id: 'domain-adaptation',
+    title: 'Semi-Supervised Adaptation',
+    year: 'IISER',
+    genre: 'Deep Learning • Generalization',
+    logline: 'Semi-supervised domain adaptation to help deep learning models generalize to unseen data.',
+    stack: ['Python', 'Deep Learning'],
+    build: ['Enforced semi-supervised domain adaptation to improve deep learning model generalization on unseen data.'],
+    features: ['Semi-supervised learning', 'Domain adaptation', 'Generalization to unseen data'],
+    metrics: [],
+    palette: amber,
+    motif: 'domains',
+  },
+  {
+    id: 'social-anxiety-analytics',
+    title: 'Social Anxiety Analytics',
+    year: '2023',
+    genre: 'Data Analysis • ML',
+    logline: 'Data analysis and ML modeling of social anxiety across college batches at the System and Informatics Lab, IISER Bhopal.',
+    stack: ['Python', 'Scikit-Learn', 'SVM', 'Logistic Regression', 'KNN'],
     build: [
-      'Architected shared-database multi-tenancy for 50+ concurrent tenants with strict tenant_id isolation and 4-level JWT/RBAC, achieving zero unauthorized-access incidents across 200+ users.',
-      'Implemented Docker Compose one-command deployment, reducing environment setup time from 45 minutes to under 2 minutes.',
+      'Conducted data analysis and ML modeling on social anxiety across college batches using SVM, Logistic Regression and KNN, identifying year-wise differences and achieving strong assessment performance.',
     ],
-    features: [
-      'Shared-database multi-tenancy',
-      'Strict tenant_id isolation',
-      '4-level JWT / RBAC',
-      'One-command Docker Compose deployment',
-    ],
-    metrics: [
-      { value: '50+', label: 'concurrent tenants' },
-      { value: '200+', label: 'users' },
-      { value: '0', label: 'unauthorized-access incidents' },
-      { value: '45m → <2m', label: 'environment setup time' },
-    ],
-    github: 'https://github.com/Sushmitadasari/Multi-Tenant-SaaS-Platform',
-    palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
-    motif: 'tenants',
+    features: ['Exploratory analysis across college batches', 'Year-wise comparison', 'SVM, Logistic Regression & KNN models'],
+    metrics: [{ value: '3', label: 'ML models compared — SVM, Logistic Regression, KNN' }],
+    palette: crimson,
+    motif: 'chart',
   },
 ];
+
+export const originalsBlurb = 'Six productions from the resume — data analysis, an LLM-powered thesis and applied ML research. Open any title for the full story.';
+export const originalsPeriod = '2023 – 2025';
 
 export type Achievement = {
   id: string;
@@ -180,175 +227,165 @@ export type Achievement = {
 
 export const achievements: Achievement[] = [
   {
-    id: 'algouniversity',
-    title: 'Tech Fellow',
-    org: 'AlgoUniversity',
-    detail: 'Selected through competitive national selection — advanced DSA, algorithm optimization, and competitive coding.',
-    laurel: 'National Selection',
+    id: 'gate-da',
+    title: 'Top 2% Nationally',
+    org: 'GATE DA · 2025',
+    detail: 'All India Rank in the top 2% in GATE Data Science & Artificial Intelligence.',
+    laurel: 'National Exam',
   },
   {
-    id: 'flipkart-grid',
-    title: 'Semi-Finalist',
-    org: 'Flipkart GRiD 7.0',
-    detail: 'Competed among top national engineering talent.',
-    laurel: 'Semi-Finalist',
-    link: 'https://drive.google.com/file/d/16pXA2hssyJqlYMr27wfi6U4bjKDLvh9f/view?usp=drive_link',
+    id: 'iiser-aptitude',
+    title: 'Top 10% in India',
+    org: 'IISER Aptitude Test · 2021',
+    detail: 'Placed in the top 10% nationally in the IISER Aptitude Test.',
+    laurel: 'National Exam',
   },
   {
-    id: 'branch-topper',
-    title: 'AIML Branch Topper',
-    org: 'B.Tech AI & ML',
-    detail: '9.24 SGPA for the semester.',
-    laurel: 'Branch Topper',
+    id: 'kabaddi',
+    title: 'Kabaddi Gold',
+    org: 'IISM',
+    detail: 'Gold medal in kabaddi at IISM.',
+    laurel: 'Gold Medal',
   },
   {
-    id: 'competitive-coding',
-    title: '850+ Problems Solved',
-    org: 'LeetCode • GFG • CodeChef',
-    detail: 'LeetCode: 350+ DSA problems (peak rating 1442). GFG: 300+ problems (rating 1436). CodeChef: 200+ problems.',
-    laurel: 'Competitive Coding',
+    id: 'sports-excellence',
+    title: 'Sports Excellence',
+    org: 'Certificate · 2026',
+    detail: 'Awarded a Certificate of Sports Excellence.',
+    laurel: 'Recognition',
   },
   {
-    id: 'hackerrank',
-    title: '5-Star Badges',
-    org: 'HackerRank',
-    detail: '5-star badges in C, Python, Java, and SQL.',
-    laurel: 'Four Languages',
+    id: 'academics',
+    title: '97% · 9.7 CGPA',
+    org: 'School & Intermediate',
+    detail: '97% in Intermediate (Telangana State Board) and a 9.7 CGPA in Secondary School.',
+    laurel: 'Academic',
   },
 ];
 
 export type Certification = { issuer: string; name: string; link: string };
 
-export const certifications: Certification[] = [
-  { issuer: 'NPTEL', name: 'Database Management System', link: 'https://drive.google.com/file/d/1MqkJHchXeaGD4S8mzPmEGxEYddAsxAjN/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Fundamentals of Artificial Intelligence', link: 'https://drive.google.com/file/d/1GqyUQ-lrE-bHaN457t6fIdssgGG4HMXf/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Deep Learning', link: 'https://drive.google.com/file/d/1PWSRP5SQDPzkoTCF3A24eIJoSpTwgsff/view?usp=sharing' },
-  { issuer: 'AWS', name: 'AWS Certified AI Practitioner', link: 'https://drive.google.com/file/d/1h8e5p0a9T6f5gBaOP2ROfwWHZfkkspGn/view?usp=drive_link' },
-  { issuer: 'AWS', name: 'AWS Academy Graduate – Cloud Foundations', link: 'https://www.credly.com/badges/2d4810f9-3dbe-444d-99b9-61312ea5e7df/public_url' },
-  { issuer: 'MongoDB', name: 'MongoDB Certified Associate Developer', link: 'https://www.credly.com/badges/fd3362bd-743a-4c4d-a68e-b1fdc5d46811/public_url' },
-  { issuer: 'GitHub', name: 'GitHub Foundations', link: 'https://drive.google.com/file/d/1o0fkCAMRWTg1oMwxlqu6t6wnOpBv66Vq/view?usp=sharing' },
-  { issuer: 'Pearson', name: 'IT Specialist – HTML and CSS', link: 'https://www.credly.com/badges/e4a55298-e396-41d8-a032-283aafe9fab7/public_url' },
-  { issuer: 'Oracle', name: 'Java Certified Foundations Associate', link: 'https://drive.google.com/file/d/1g-yyceHtLg_k2RWiOIJqH0MMcGlaH90P/view?usp=sharing' },
-  { issuer: 'Oracle', name: 'Oracle Certified Foundations Associate – Database', link: 'https://drive.google.com/file/d/10-DzabbcH2vHrI6bAohoT8czKRZMa2kV/view?usp=drive_link' },
-  { issuer: 'Cisco', name: 'HTML Essentials', link: 'https://www.credly.com/badges/eb27ca95-3b2a-4948-bef9-0385d1d49055/public_url' },
-  { issuer: 'Cisco', name: 'CSS Essentials', link: 'https://www.credly.com/badges/3b37497f-6a61-4889-af3c-ed337a460a0b/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 1', link: 'https://www.credly.com/badges/9cdd4d55-6ecc-463f-b254-811ccdd0539c/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 2', link: 'https://www.credly.com/badges/0e1b036e-4318-4c8e-b750-2aca77314442/public_url' },
-  { issuer: 'Cisco', name: 'Python Essentials 1', link: 'https://www.credly.com/badges/0e21e3eb-d8ef-4770-95d7-dcbd6f8696b1/public_url' },
-  { issuer: 'Udemy', name: 'Microsoft Azure Hands-On Training (AZ-900, AZ-104, AZ-305)', link: 'https://drive.google.com/file/d/1KrXClhY0nJ3Acxs7DioNf4Q1rpaMvgPT/view?usp=sharing' },
-];
+/** No certifications are listed on the resume — the "Certified" rail is hidden while this is empty. */
+export const certifications: Certification[] = [];
 
 export type Skill = { name: string; mono: string; note?: string };
 export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'languages',
-    title: 'Languages',
-    subtitle: 'Java is the primary language',
+    id: 'product-analytics',
+    title: 'Product Analytics',
+    subtitle: 'Metrics that drive product decisions',
     skills: [
-      { name: 'Java', mono: 'Jv', note: 'Primary' },
+      { name: 'Funnel Analysis', mono: 'Fn', note: 'Core' },
+      { name: 'Retention Analysis', mono: 'Rt' },
+      { name: 'A/B Testing', mono: 'Ab' },
+      { name: 'Hypothesis Testing', mono: 'Ht' },
+      { name: 'Customer Segmentation', mono: 'Cs' },
+      { name: 'RCA', mono: 'Rc' },
+      { name: 'Business Metrics', mono: 'Bm' },
+      { name: 'KPI Tracking', mono: 'Kp' },
+    ],
+  },
+  {
+    id: 'business-analysis',
+    title: 'Business Analysis',
+    subtitle: 'From requirement to delivery',
+    skills: [
+      { name: 'Business Requirements', mono: 'Br', note: 'Daily' },
+      { name: 'API Requirements', mono: 'Ap' },
+      { name: 'Functional Specifications', mono: 'Fs' },
+      { name: 'User Stories', mono: 'Us' },
+      { name: 'Process Flows', mono: 'Pf' },
+      { name: 'Traceability Matrices', mono: 'Tm' },
+      { name: 'ATDD Scenarios', mono: 'At' },
+      { name: 'Agile', mono: 'Ag' },
+      { name: 'Stakeholder Collaboration', mono: 'Sc' },
+    ],
+  },
+  {
+    id: 'data-analysis',
+    title: 'Data Analysis',
+    subtitle: 'Analysis & visualization',
+    skills: [
+      { name: 'SQL', mono: 'Sq', note: 'Daily' },
+      { name: 'Advanced Excel', mono: 'Xl' },
+      { name: 'EDA', mono: 'Ed' },
+      { name: 'Data Visualization', mono: 'Vz' },
+      { name: 'Data Cleaning', mono: 'Dc' },
+      { name: 'Data Validation', mono: 'Dv' },
+      { name: 'Data Quality Assessment', mono: 'Dq' },
+    ],
+  },
+  {
+    id: 'programming',
+    title: 'Programming',
+    subtitle: 'Languages',
+    skills: [
+      { name: 'SQL', mono: 'Sq', note: 'Primary' },
       { name: 'Python', mono: 'Py' },
-      { name: 'C', mono: 'C' },
-      { name: 'C++', mono: 'C+' },
+      { name: 'R', mono: 'R' },
     ],
   },
   {
-    id: 'frontend',
-    title: 'Frontend',
-    subtitle: 'Interfaces & the web platform',
+    id: 'ai-for-product',
+    title: 'AI for Product',
+    subtitle: 'Applied to product & business problems',
     skills: [
-      { name: 'React', mono: 'Re' },
-      { name: 'HTML', mono: 'Ht' },
-      { name: 'CSS', mono: 'Cs' },
-      { name: 'JavaScript', mono: 'Js' },
-    ],
-  },
-  {
-    id: 'backend',
-    title: 'Backend',
-    subtitle: 'Server-side logic',
-    skills: [
-      { name: 'Node.js', mono: 'No' },
-      { name: 'Express.js', mono: 'Ex' },
-    ],
-  },
-  {
-    id: 'infra',
-    title: 'Infra & Tools',
-    subtitle: 'Shipping & architecture',
-    skills: [
-      { name: 'Docker', mono: 'Dk' },
-      { name: 'Docker Compose', mono: 'Dc' },
-      { name: 'REST APIs', mono: 'Ap' },
-      { name: 'Microservices', mono: 'Ms' },
-      { name: 'JWT Auth', mono: 'Jw' },
-      { name: 'Git / GitHub', mono: 'Gt' },
-      { name: 'Postman', mono: 'Pm' },
-    ],
-  },
-  {
-    id: 'databases',
-    title: 'Databases',
-    subtitle: 'Indexing • Normalization',
-    skills: [
-      { name: 'PostgreSQL', mono: 'Pg' },
-      { name: 'MongoDB', mono: 'Mg' },
-      { name: 'MySQL', mono: 'My' },
-    ],
-  },
-  {
-    id: 'fundamentals',
-    title: 'CS Fundamentals',
-    subtitle: 'The foundations',
-    skills: [
-      { name: 'DSA', mono: 'Ds' },
-      { name: 'OS', mono: 'Os' },
-      { name: 'CN', mono: 'Cn' },
-      { name: 'DBMS', mono: 'Db' },
-      { name: 'OOPs', mono: 'Oo' },
-      { name: 'Collections', mono: 'Co' },
-      { name: 'Multithreading', mono: 'Mt' },
-    ],
-  },
-  {
-    id: 'interests',
-    title: 'Interests',
-    subtitle: 'Coming soon to the series',
-    skills: [
-      { name: 'System Design', mono: 'Sd' },
-      { name: 'Cloud Computing (AWS)', mono: 'Aw' },
+      { name: 'LLMs', mono: 'Lm' },
+      { name: 'NLP', mono: 'Nl' },
       { name: 'Machine Learning', mono: 'Ml' },
+      { name: 'Classification Models', mono: 'Cm' },
+      { name: 'AI Prototyping', mono: 'Pr' },
+    ],
+  },
+  {
+    id: 'frameworks',
+    title: 'Frameworks & Libraries',
+    subtitle: 'Data, ML & serving',
+    skills: [
+      { name: 'Pandas', mono: 'Pd' },
+      { name: 'NumPy', mono: 'Np' },
+      { name: 'Matplotlib', mono: 'Mp' },
+      { name: 'Scikit-Learn', mono: 'Sk' },
+      { name: 'FastAPI', mono: 'Fa' },
+      { name: 'Flask', mono: 'Fl' },
+      { name: 'TensorFlow', mono: 'Tf' },
+      { name: 'PyTorch', mono: 'Pt' },
     ],
   },
 ];
 
 /**
  * Factual cross-references shown when a skill card is hovered/tapped:
- * where the skill appears in the projects, certifications or achievements on the resume.
+ * where the skill appears in the experience, projects or achievements on the resume.
  */
 export const skillEvidence: Record<string, string[]> = {
-  Java: ['Oracle Java Certified Foundations Associate', 'HackerRank 5-star'],
-  Python: ['PolicyGuard AI', 'Cisco Python Essentials 1', 'HackerRank 5-star'],
-  C: ['HackerRank 5-star'],
-  React: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  HTML: ['Pearson IT Specialist – HTML and CSS', 'Cisco HTML Essentials'],
-  CSS: ['Pearson IT Specialist – HTML and CSS', 'Cisco CSS Essentials'],
-  JavaScript: ['Cisco JavaScript Essentials 1 & 2'],
-  'Node.js': ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  'Express.js': ['Payment Gateway System'],
-  Docker: ['Payment Gateway System'],
-  'Docker Compose': ['Multi-Tenant SaaS Platform'],
-  'REST APIs': ['PolicyGuard AI'],
-  Microservices: ['Payment Gateway System'],
-  'JWT Auth': ['Multi-Tenant SaaS Platform'],
-  'Git / GitHub': ['GitHub Foundations'],
-  PostgreSQL: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  MongoDB: ['MongoDB Certified Associate Developer'],
-  DBMS: ['NPTEL Database Management System', 'Oracle Database Foundations'],
-  DSA: ['AlgoUniversity Tech Fellow', '850+ problems solved'],
-  'Cloud Computing (AWS)': ['AWS Certified AI Practitioner', 'AWS Academy Cloud Foundations'],
-  'Machine Learning': ['B.Tech AI & ML', 'NPTEL Deep Learning'],
+  RCA: ['Lending workflow bottleneck analysis — Nucleus Software'],
+  'KPI Tracking': ['Data-driven process improvements — Nucleus Software'],
+  'Customer Segmentation': ['Year-wise cohort comparison — Social Anxiety Analytics'],
+  'Hypothesis Testing': ['Year-wise differences — Social Anxiety Analytics'],
+  'Business Requirements': ['CPV & LEAD workflows — Nucleus Software'],
+  'API Requirements': ['CPV & LEAD workflows — Nucleus Software'],
+  'Functional Specifications': ['CPV & LEAD workflows — Nucleus Software'],
+  'User Stories': ['CPV & LEAD workflows — Nucleus Software'],
+  'Process Flows': ['Workflow documentation — Nucleus Software'],
+  'Traceability Matrices': ['Requirement traceability — Nucleus Software'],
+  'ATDD Scenarios': ['Test automation support — Nucleus Software'],
+  Agile: ['Product Owners, Developers & QA — Nucleus Software'],
+  'Stakeholder Collaboration': ['Product Owners, Developers, QA & stakeholders — Nucleus Software'],
+  SQL: ['Lending workflow analysis — Nucleus Software'],
+  'Advanced Excel': ['Lending workflow analysis — Nucleus Software'],
+  EDA: ['Social Anxiety Analytics'],
+  Python: ['Herbal Literature LLM', 'Social Anxiety Analytics'],
+  LLMs: ['Herbal Literature LLM (BS thesis)'],
+  NLP: ['Herbal Literature LLM (BS thesis)'],
+  'Machine Learning': ['Social Anxiety Analytics', 'Research at IIT Jammu & IISER Bhopal'],
+  'Classification Models': ['SVM, Logistic Regression & KNN — Social Anxiety Analytics'],
+  'AI Prototyping': ['Gradio + FastAPI PDF-extraction app — Herbal Literature LLM'],
+  'Scikit-Learn': ['Social Anxiety Analytics'],
+  FastAPI: ['Herbal Literature LLM'],
+  PyTorch: ['Boundary-Aware Point Clouds'],
 };
 
 export type Episode = {
@@ -368,122 +405,140 @@ export type Season = {
   episodes: Episode[];
 };
 
-const crimson: Palette = { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' };
-const amber: Palette = { from: '#1c1003', via: '#6b3c06', to: '#0a0806', accent: '#ffb547' };
-const ocean: Palette = { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' };
-const violet: Palette = { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' };
-const jade: Palette = { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' };
-
 export const seasons: Season[] = [
   {
     number: 1,
     title: 'The Beginning',
-    period: '2021 – 2023',
-    synopsis: 'Intermediate years at Sri Chaitanya Junior College, Kakinada — Mathematics, Physics and Chemistry.',
+    period: '2019 – 2021',
+    synopsis: 'School and Intermediate in Telangana — the years that set the bar.',
     episodes: [
       {
         code: 'S01 E01',
         title: 'The Foundation',
-        description: 'BIEAP, MPC at Sri Chaitanya Junior College, Kakinada — finishing with a score of 925/1000.',
-        tags: ['MPC', 'BIEAP'],
-        runtime: 'Jun 2021 – May 2023',
+        description: 'Secondary School at Bhashayam Blooms under the Telangana Board — finishing with a 9.7 CGPA.',
+        tags: ['SSC', 'CGPA 9.7'],
+        runtime: '2019',
         palette: amber,
+      },
+      {
+        code: 'S01 E02',
+        title: 'The Ninety-Seven',
+        description: 'Intermediate at Sri Chaitanya Junior College, State Board of Intermediate Education, Telangana — 97%.',
+        tags: ['Intermediate', '97%'],
+        runtime: '2019 – 2021',
+        palette: crimson,
       },
     ],
   },
   {
     number: 2,
-    title: 'Enter: AI & ML',
-    period: '2023 – Present',
-    synopsis: 'B.Tech in Artificial Intelligence and Machine Learning at Aditya Engineering College, Surampalem.',
+    title: 'Enter: Data Science',
+    period: '2021 – 2025',
+    synopsis: 'BS in Data Science and Engineering at IISER Bhopal — from the first dataset to the first research lab.',
     episodes: [
       {
         code: 'S02 E01',
-        title: 'The Engineer',
-        description: 'Bachelor of Technology in Artificial Intelligence and Machine Learning — CGPA 9.10.',
-        tags: ['B.Tech', 'AI & ML', 'CGPA 9.10'],
-        runtime: 'Oct 2023 – Present',
+        title: 'The Admission',
+        description: 'Top 10% in India in the IISER Aptitude Test, opening the door to a BS in Data Science and Engineering at IISER Bhopal.',
+        tags: ['IISER Bhopal', 'Top 10%'],
+        runtime: '2021',
         palette: violet,
       },
       {
         code: 'S02 E02',
-        title: 'The Topper',
-        description: 'AIML Branch Topper with a 9.24 SGPA for the semester.',
-        tags: ['9.24 SGPA', 'Branch Topper'],
-        runtime: 'One semester',
-        palette: crimson,
+        title: 'The Data Analyst',
+        description: 'Data Analyst Researcher at the System and Informatics Lab — modeling social anxiety across college batches with SVM, Logistic Regression and KNN.',
+        tags: ['Python', 'SVM', 'KNN', 'Logistic Regression'],
+        runtime: 'May – Nov 2023',
+        palette: jade,
       },
       {
         code: 'S02 E03',
-        title: 'The Problem Solver',
-        description: 'LeetCode 350+ (peak 1442), GFG 300+ (1436), CodeChef 200+ and HackerRank 5-star badges in C, Python, Java and SQL.',
-        tags: ['DSA', 'LeetCode', 'GFG', 'CodeChef', 'HackerRank'],
-        runtime: '850+ problems',
-        palette: jade,
+        title: 'The Raider',
+        description: 'Gold medal in kabaddi at IISM.',
+        tags: ['Kabaddi', 'Gold'],
+        runtime: 'IISM',
+        palette: amber,
       },
     ],
   },
   {
     number: 3,
-    title: 'Learning to Build',
-    period: '2025 – 2026',
-    synopsis: 'One year of intensive Full-Stack Development training as a Trainee at Technical Hub Pvt Ltd.',
+    title: 'The Research Arc',
+    period: '2024 – 2025',
+    synopsis: 'Deep learning in the field and in the lab — underwater video, 3D scenes, point clouds and an LLM thesis.',
     episodes: [
       {
         code: 'S03 E01',
-        title: 'The Trainee',
-        description: 'Intensive Full-Stack Development training covering frontend, backend, database integration and deployment workflows.',
-        tags: ['FSD', 'Frontend', 'Backend', 'Databases'],
-        runtime: 'May 2025 – Jun 2026',
+        title: 'Into the Deep',
+        description: 'Summer Research Fellow at the Underwater AI Lab, IIT Jammu — a YOLOv5 pipeline to detect and track fish in challenging aquatic environments.',
+        tags: ['YOLOv5', 'Computer Vision'],
+        runtime: 'May – Jul 2024',
         palette: ocean,
       },
       {
         code: 'S03 E02',
-        title: 'The Developer',
-        description: 'Developed responsive web applications — user interfaces, server-side logic and database connectivity.',
-        tags: ['React', 'Node.js', 'Express.js'],
-        runtime: 'Technical Hub',
+        title: 'Building Worlds',
+        description: '3D urban scene generation with layout priors, contrastive boundary learning for point clouds, and semi-supervised domain adaptation.',
+        tags: ['3D Vision', 'Point Clouds', 'Domain Adaptation'],
+        runtime: 'IISER Bhopal',
         palette: violet,
       },
       {
         code: 'S03 E03',
-        title: 'The Deployer',
-        description: 'Deployed and managed web applications with version control, debugging and end-to-end development practices.',
-        tags: ['Git / GitHub', 'Deployment'],
-        runtime: 'Technical Hub',
+        title: 'The Thesis',
+        description: 'Identifying the potential of ginger for arthritis treatment in the literature using an LLM — with a Gradio + FastAPI app for PDF extraction.',
+        tags: ['NLP', 'LLM', 'BERT', 'FastAPI'],
+        runtime: 'Dec 2024 – Jun 2025',
+        palette: crimson,
+      },
+      {
+        code: 'S03 E04',
+        title: 'The Top Two Percent',
+        description: 'GATE Data Science & AI — All India Rank in the top 2% nationally.',
+        tags: ['GATE DA', 'Top 2%'],
+        runtime: '2025',
         palette: jade,
       },
     ],
   },
   {
     number: 4,
-    title: 'Building Real Products',
-    period: '2026',
-    synopsis: 'Three Originals — an AI platform, a payment gateway and a multi-tenant SaaS — plus national-level recognition.',
+    title: 'The Analyst',
+    period: '2025 – Present',
+    synopsis: 'Solutions Analyst at Nucleus Software, Noida — shaping CPV and LEAD workflows for a lending platform.',
     episodes: [
       {
         code: 'S04 E01',
-        title: 'The AI Builder',
-        description: 'PolicyGuard AI — LLM-based Q&A and key-information extraction across 500+ policy documents at 92% accuracy.',
-        tags: ['Python', 'NLP', 'LLM'],
-        runtime: '2026',
-        palette: crimson,
+        title: 'The Translator',
+        description: 'Turning business requirements for CPV and LEAD workflows into API requirements, functional specifications and user stories.',
+        tags: ['API Requirements', 'User Stories'],
+        runtime: 'Jul 2025 – Present',
+        palette: ocean,
       },
       {
         code: 'S04 E02',
-        title: 'The Architect',
-        description: 'Payment Gateway System and Multi-Tenant SaaS Platform — state machines, microservices, tenant isolation and RBAC.',
-        tags: ['Node.js', 'PostgreSQL', 'Docker'],
-        runtime: '2026',
-        palette: amber,
+        title: 'The Collaborator',
+        description: 'Working with Product Owners, Developers, QA and stakeholders in Agile to define BRs, data flows and API integrations.',
+        tags: ['Agile', 'Data Flows'],
+        runtime: 'Nucleus Software',
+        palette: violet,
       },
       {
         code: 'S04 E03',
-        title: 'The Fellow',
-        description: 'Selected as a Tech Fellow at AlgoUniversity and reached the Semi-Finals of Flipkart GRiD 7.0.',
-        tags: ['AlgoUniversity', 'Flipkart GRiD 7.0'],
-        runtime: 'National stage',
-        palette: ocean,
+        title: 'The Optimizer',
+        description: 'Analyzing lending workflows with SQL and Excel to surface bottlenecks, manual touchpoints and process inefficiencies.',
+        tags: ['SQL', 'Excel', 'Process Improvement'],
+        runtime: 'Nucleus Software',
+        palette: amber,
+      },
+      {
+        code: 'S04 E04',
+        title: 'The Documenter',
+        description: 'Process flows, workflow documentation, traceability matrices and ATDD scenarios for solution design and test automation.',
+        tags: ['Process Flows', 'ATDD'],
+        runtime: 'Nucleus Software',
+        palette: jade,
       },
     ],
   },
@@ -491,15 +546,15 @@ export const seasons: Season[] = [
     number: 5,
     title: "What's Next",
     period: 'Now streaming',
-    synopsis: 'The interests on the resume point to the next arc of the story.',
+    synopsis: 'The next arc: product and business roles where data, analysis and AI shape what gets built.',
     episodes: [
       {
         code: 'S05 E01',
-        title: 'The Next Chapter',
-        description: 'Exploring System Design, Cloud Computing (AWS) and Machine Learning.',
-        tags: ['System Design', 'AWS', 'Machine Learning'],
+        title: 'The Product Chapter',
+        description: 'Heading for Product Analyst, Senior Data Analyst, Associate Product Manager and Business Analyst roles — funnels, retention, A/B testing and segmentation, with AI in the toolkit.',
+        tags: ['Product Analyst', 'Senior Data Analyst', 'APM', 'Business Analyst'],
         runtime: 'In production',
-        palette: violet,
+        palette: crimson,
       },
     ],
   },
@@ -508,16 +563,42 @@ export const seasons: Season[] = [
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 
 export const topPicks: TopPick[] = [
-  { label: 'Primary language', title: 'Java', detail: 'Listed as primary on the resume • Oracle certified', palette: amber },
-  { label: 'The AI Original', title: 'PolicyGuard AI', detail: '500+ documents • 92% accuracy', palette: crimson },
-  { label: 'Biggest stage', title: 'Flipkart GRiD 7.0', detail: 'Semi-Finalist', palette: ocean },
-  { label: 'National selection', title: 'AlgoUniversity', detail: 'Tech Fellow', palette: violet },
-  { label: 'Academic high', title: 'Branch Topper', detail: '9.24 SGPA in AI & ML', palette: jade },
-  { label: 'Cloud credential', title: 'AWS AI Practitioner', detail: 'AWS Certified', palette: amber },
-  { label: 'Problems solved', title: '850+', detail: 'LeetCode 350+ • GFG 300+ • CodeChef 200+', palette: crimson },
-  { label: 'The training arc', title: '1 Year of FSD', detail: 'Technical Hub Pvt Ltd', palette: ocean },
-  { label: 'Database credential', title: 'MongoDB', detail: 'Certified Associate Developer', palette: jade },
-  { label: 'Current focus', title: 'System Design', detail: 'with Cloud (AWS) & Machine Learning', palette: violet },
+  { label: 'Current role', title: 'Solutions Analyst', detail: 'Nucleus Software • Lending platform', palette: ocean },
+  { label: 'Product analytics', title: 'Funnels & A/B', detail: 'Retention • Segmentation • RCA', palette: crimson },
+  { label: 'Business analysis', title: 'Requirements → APIs', detail: 'CPV & LEAD workflows', palette: violet },
+  { label: 'Daily tools', title: 'SQL + Excel', detail: 'Bottlenecks → process improvements', palette: amber },
+  { label: 'Agile delivery', title: 'Cross-Functional', detail: 'POs • Developers • QA • Stakeholders', palette: jade },
+  { label: 'National rank', title: 'GATE DA', detail: 'Top 2% nationally • 2025', palette: jade },
+  { label: 'AI in the toolkit', title: 'LLM Insights', detail: 'BS thesis • BERT • FastAPI', palette: crimson },
+  { label: 'Alma mater', title: 'IISER Bhopal', detail: 'BS Data Science & Engineering', palette: violet },
+  { label: 'Admission', title: 'Top 10%', detail: 'IISER Aptitude Test • 2021', palette: ocean },
+  { label: 'On the mat', title: 'Kabaddi Gold', detail: 'IISM', palette: amber },
+];
+
+/** Hero billboard: meta row and the floating chips beside the portrait. */
+export const hero = {
+  badge: 'PRODUCT',
+  meta: ['Solutions Analyst · Nucleus', 'BS Data Science · IISER', 'GATE DA · Top 2%'],
+  chips: [
+    { text: 'Funnels · A/B · Retention', sub: 'Product analytics' },
+    { text: 'Requirements → APIs', sub: 'Business analysis' },
+    { text: 'SQL · Excel · Python', sub: 'Analytics stack' },
+  ],
+};
+
+/** About Me fact grid. */
+export const aboutFacts = [
+  { k: 'Now', v: 'Solutions Analyst', s: 'Nucleus Software Exports Ltd. · Noida' },
+  { k: 'Open to', v: 'Product & Business roles', s: 'Product Analyst · Sr. Data Analyst · APM · BA' },
+  { k: 'Toolkit', v: 'SQL, Excel & Python', s: 'with R, Pandas, KPI tracking & A/B testing' },
+  { k: 'Studied', v: 'BS, Data Science & Engineering', s: 'IISER Bhopal · 2021 – 2025 · ' + profile.location },
+];
+
+/** Stat strip next to the resume sheet. */
+export const resumeStats = [
+  { v: 'Top 2%', k: 'GATE DA' },
+  { v: String(projects.length), k: 'Originals' },
+  { v: String(experience.length), k: 'Roles' },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -525,45 +606,40 @@ export type IntroSlide = { kicker: string; title: string; lines: string[]; chips
 
 export const introSlides: IntroSlide[] = [
   {
-    kicker: 'Education',
-    title: 'B.Tech · AI & ML',
-    lines: ['Aditya Engineering College, Surampalem', 'October 2023 – Present'],
-    chips: ['CGPA 9.10'],
+    kicker: 'Now',
+    title: 'Product & Business Analyst',
+    lines: ['Solutions Analyst · Nucleus Software · July 2025 – Present', 'Business requirements → API specs, user stories & product workflows', 'SQL & Excel to find bottlenecks and drive process improvements'],
   },
   {
     kicker: 'Skills',
-    title: 'Java first.',
-    lines: ['Python, C, C++ · React, Node.js, Express.js', 'PostgreSQL, MongoDB, MySQL · Docker, REST, JWT'],
-    chips: ['Java', 'Python', 'React', 'Node.js', 'Docker', 'PostgreSQL'],
+    title: 'Data → Decisions.',
+    lines: ['Funnels · Retention · A/B testing · RCA · Segmentation', 'SQL · Advanced Excel · Python · R · KPI tracking'],
+    chips: ['SQL', 'Excel', 'Python', 'A/B Testing', 'Funnels', 'Agile'],
   },
   {
-    kicker: 'Training',
-    title: 'The Training Arc',
-    lines: ['One year of intensive Full‑Stack Development training', 'Trainee · Technical Hub Pvt Ltd · May 2025 – June 2026', 'Frontend · Backend · Databases · Deployment'],
+    kicker: 'Education',
+    title: 'BS · Data Science',
+    lines: ['IISER Bhopal — Data Science and Engineering', '2021 – 2025'],
+    chips: ['GATE DA · Top 2%', 'IISER Aptitude · Top 10%'],
   },
   {
-    kicker: 'Projects',
-    title: 'Three Originals',
-    lines: ['PolicyGuard AI — 500+ documents, 92% accuracy', 'Payment Gateway — 1,000+ transactions, 99.8% uptime', 'Multi-Tenant SaaS — 50+ tenants, zero unauthorized access'],
+    kicker: 'With AI',
+    title: 'AI in the Toolkit',
+    lines: ['LLM thesis — structured extraction with BERT, Gradio & FastAPI', 'ML modeling with SVM, Logistic Regression & KNN', 'Applied research at IIT Jammu & IISER Bhopal'],
   },
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['Tech Fellow — AlgoUniversity', 'Semi-Finalist — Flipkart GRiD 7.0', 'AIML Branch Topper — 9.24 SGPA'],
+    lines: ['GATE DA — Top 2% nationally', 'IISER Aptitude Test — Top 10% in India', 'Kabaddi Gold — IISM'],
   },
   {
-    kicker: 'Certified',
-    title: '16 Certifications',
-    lines: ['AWS · MongoDB · Oracle · GitHub · Pearson', 'NPTEL · Cisco · Udemy'],
-  },
-  {
-    kicker: 'Current mission',
-    title: 'Now exploring',
-    lines: ['System Design · Cloud Computing (AWS) · Machine Learning'],
+    kicker: 'Open to',
+    title: 'The Next Role',
+    lines: ['Product Analyst · Senior Data Analyst', 'Associate Product Manager · Business Analyst'],
   },
 ];
 
-export type ProfileId = 'sushmita' | 'recruiter' | 'developer' | 'creative';
+export type ProfileId = 'tharun' | 'recruiter' | 'developer' | 'creative';
 export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
 
 export const viewerProfiles: {
@@ -574,8 +650,8 @@ export const viewerProfiles: {
   order: SectionId[];
 }[] = [
   {
-    id: 'sushmita',
-    name: 'Sushmita',
+    id: 'tharun',
+    name: 'Tharun',
     blurb: 'The full series, in order',
     color: '#e5132b',
     order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'],
@@ -589,10 +665,10 @@ export const viewerProfiles: {
   },
   {
     id: 'developer',
-    name: 'Developer',
-    blurb: 'Projects, stack & GitHub first',
+    name: 'Hiring Manager',
+    blurb: 'Skills, experience & projects first',
     color: '#46e3a8',
-    order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'],
+    order: ['skills', 'about', 'originals', 'journey', 'moments', 'picks', 'story'],
   },
   {
     id: 'creative',
@@ -603,12 +679,16 @@ export const viewerProfiles: {
   },
 ];
 
+const momentsMeta = certifications.length
+  ? `${achievements.length} Moments • ${certifications.length} Certifications`
+  : `${achievements.length} Moments • Awards & ranks`;
+
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & training', palette: violet },
+  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Product & business focus', palette: violet },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
-  originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2026`, palette: crimson },
+  originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • ${originalsPeriod}`, palette: crimson },
   picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from the resume', palette: jade },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
-  moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },
+  moments: { nav: 'Moments', card: 'My Achievements', meta: momentsMeta, palette: crimson },
   story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
 };

@@ -64,6 +64,7 @@ export default function Achievements() {
       </div>
 
       {/* certifications rail */}
+      {certifications.length > 0 && (
       <div className="mt-16">
         <div className="gutter mb-2 flex flex-wrap items-end justify-between gap-2">
           <h3 className="font-sans text-lg font-semibold text-bone sm:text-2xl">
@@ -97,6 +98,7 @@ export default function Achievements() {
           <RailButtons rail={rail} />
         </div>
       </div>
+      )}
     </>
   );
 }
