@@ -2,12 +2,14 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { profile } from '../data/portfolio';
 import { useSmoothScroll } from '../hooks/smoothScroll';
+import { useVisitorCount } from '../hooks/useVisitorCount';
 import { EASE, Magnetic, Particles } from './fx';
 import { SeriesMark } from './Poster';
 
 export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollTo } = useSmoothScroll();
+  const visitors = useVisitorCount();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'start 0.2'] });
   const spacing = useTransform(scrollYProgress, [0, 1], ['0.6em', '0.02em']);
   const blur = useTransform(scrollYProgress, [0, 1], ['blur(16px)', 'blur(0px)']);
@@ -92,6 +94,12 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
         <div className="mb-2 text-base">
           <SeriesMark />
         </div>
+        {visitors !== null && (
+          <p className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-mist" aria-live="polite">
+            <span aria-hidden className="h-1.5 w-1.5 animate-pulse rounded-full bg-crimson-2" />
+            {visitors.toLocaleString('en-IN')} {visitors === 1 ? 'VISITOR' : 'VISITORS'}
+          </p>
+        )}
         <p className="text-[11px] leading-relaxed text-smoke">
           © {new Date().getFullYear()} {profile.displayName}. A personal, streaming-inspired portfolio — not affiliated with any streaming service.
         </p>
