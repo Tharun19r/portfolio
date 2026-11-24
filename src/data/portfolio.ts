@@ -16,12 +16,12 @@ export const profile = {
   seriesTag: 'THE SERIES',
   /** Fictional studio card shown at the very start of the opening sequence. */
   originalLabel: 'A RAMAVATH ORIGINAL',
-  role: 'Product & Business Analyst',
-  tagline: ['Product Analytics', 'Business Analysis', 'Data + AI'],
+  role: 'Product, Business & Data Analyst',
+  tagline: ['Product Analytics', 'Business Analysis', 'Data Analytics'],
   /** Roles the portfolio is positioned for. */
-  targetRoles: ['Product Analyst', 'Senior Data Analyst', 'Associate Product Manager', 'Business Analyst'],
+  targetRoles: ['Product Analyst', 'Business Analyst', 'Data Analyst'],
   intro:
-    'A Solutions Analyst at Nucleus Software and a Data Science & Engineering graduate from IISER Bhopal, translating business requirements into API specifications and product workflows, identifying process bottlenecks through SQL and Excel, and collaborating with cross-functional teams to deliver effective, data-driven solutions.',
+    'A Solutions Analyst at Nucleus Software and a Data Science & Engineering graduate from IISER Bhopal. I turn business problems into clear requirements and analytical questions, use SQL, Excel, Python and R to find what the data says, and work with Product, Engineering and business teams to ship data-driven improvements, like cutting a verification turnaround time from 5 hours to 1 hour.',
   location: 'Hyderabad, Telangana',
   email: 'ramavaththarun73@gmail.com',
   links: {
@@ -34,7 +34,7 @@ export const profile = {
     srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
     alt: 'Portrait of Ramavath Tharun',
   },
-  focus: ['Product Analytics', 'Business Analysis', 'Data-Driven Decisions', 'Process Improvement', 'AI for Product Insights'],
+  focus: ['Product Analytics', 'Business Analysis', 'Data Analysis', 'Process Improvement', 'Data-Driven Decisions'],
 };
 
 export const education = [
@@ -73,10 +73,12 @@ export const experience = [
     points: [
       'Working in the Retail Banking – Lending domain, owning product features end to end: business requirements → user stories → ATDD → customer demos.',
       'Lead Management (backend): delivered the module end to end — captured business requirements, wrote user stories and ATDD scenarios, and collaborated with stakeholders and Product Managers through delivery.',
-      'Contact Point Verification (CPV): wrote the user stories, tested the feature and identified bugs with the PQM team, authored ATDD scenarios in Given-When-Then (GWT) format, documented the product write-up and ran customer demos.',
+      'Contact Point Verification (CPV): led discovery to delivery, from user stories and Given-When-Then (GWT) ATDD scenarios to testing with the PQM team, UAT, Go-Live and customer demos. Reduced turnaround time from 5 hours to 1 hour (80%) and enabled onboarding of 2 enterprise clients within 3 months.',
       'User Management & IAM: currently working on identity and access management for the whole product.',
       'Analyzed lending workflows using SQL and Excel to identify bottlenecks, manual touchpoints and process inefficiencies, enabling data-driven process improvements.',
-      'Created process flows, workflow documentation and traceability matrices to support solution design, requirement traceability and process standardization.',
+      'Performed SQL-based data validation, reconciliation and diagnostics on production data, translating data discrepancies into actionable insights for business and engineering teams.',
+      'Contributed to AI/ML initiatives (pre-delinquency prediction, credit decisioning, Agentic AI use cases) by framing business problems and validating model outputs against business data.',
+      'Created PRDs, BRDs, process flows, workflow documentation and traceability matrices to support solution design, requirement traceability and process standardization.',
     ],
   },
   {
@@ -146,16 +148,20 @@ export const projects: Project[] = [
     title: 'Contact Point Verification',
     year: 'Shipped',
     genre: 'Retail Banking • Lending • QA',
-    logline: 'CPV for the lending journey — from user stories and Given-When-Then acceptance tests to bug triage with PQM and live customer demos.',
+    logline: 'CPV for the lending journey: from user stories and Given-When-Then tests to Go-Live, cutting turnaround time from 5 hours to 1 hour.',
     stack: ['User Stories', 'ATDD (GWT)', 'Functional Testing', 'Product Documentation', 'Customer Demos'],
     build: [
       'Wrote the user stories for the CPV (Contact Point Verification) feature of the lending product.',
       'Tested the feature end to end, identified bugs and worked with the PQM team to get them resolved.',
       'Authored ATDD scenarios in Given-When-Then (GWT) format and documented the product write-up.',
-      'Ran product demos for customers.',
+      'Ran product demos for customers and supported UAT and Go-Live.',
+      'Result: turnaround time fell from 5 hours to 1 hour (80%), enabling onboarding of 2 enterprise clients within 3 months.',
     ],
     features: ['Given-When-Then acceptance scenarios', 'Bug identification with the PQM team', 'Product write-up documentation', 'Customer demos'],
-    metrics: [],
+    metrics: [
+      { value: '5h → 1h', label: 'Turnaround time, 80% faster' },
+      { value: '2', label: 'Enterprise clients onboarded within 3 months' },
+    ],
     palette: jade,
     motif: 'verify',
   },
@@ -171,6 +177,39 @@ export const projects: Project[] = [
     metrics: [],
     palette: violet,
     motif: 'lock',
+  },
+  {
+    id: 'sql-data-validation',
+    title: 'SQL Data Validation',
+    year: 'Nucleus',
+    genre: 'Data Quality • SQL • Lending',
+    logline: 'SQL diagnostics that find and resolve reconciliation gaps in live lending data, turning discrepancies into insights.',
+    stack: ['SQL', 'Data Validation', 'Data Reconciliation', 'Excel'],
+    build: [
+      'Wrote SQL diagnostic queries to detect and resolve reconciliation gaps across live enterprise lending data.',
+      'Translated data discrepancies into actionable insights for business and engineering teams.',
+    ],
+    features: ['Reconciliation gap detection', 'Production data diagnostics', 'Data accuracy & integrity checks'],
+    metrics: [],
+    palette: amber,
+    motif: 'chart',
+  },
+  {
+    id: 'econometrics-tobit',
+    title: 'Econometric Driver Analysis',
+    year: '2023',
+    genre: 'Econometrics • Statistics • R',
+    logline: 'A censored-regression (Tobit) model in R that measures how demographic and behavioural drivers shape a survey outcome.',
+    stack: ['R', 'AER', 'censReg', 'Tobit Regression', 'Marginal Effects'],
+    build: [
+      'Modelled a censored survey outcome with Tobit regression in R (AER, censReg).',
+      'Estimated the impact of drivers (age, years married, religiousness, occupation) and computed marginal effects to quantify each one.',
+      'Interpreted statistical significance as concise, decision-ready findings.',
+    ],
+    features: ['Censored (Tobit) regression', 'Marginal effects', 'Driver analysis', 'Statistical significance'],
+    metrics: [],
+    palette: jade,
+    motif: 'chart',
   },
   {
     id: 'herbal-llm',
@@ -263,7 +302,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const originalsBlurb = 'Three productions from the lending floor at Nucleus Software, plus six from data analysis, an LLM-powered thesis and applied ML research. Open any title for the full story.';
+export const originalsBlurb = 'Four productions from the lending floor at Nucleus Software, plus econometrics, data analysis, an LLM-powered thesis and applied ML research. Open any title for the full story.';
 export const originalsPeriod = '2023 – Now';
 
 export type Achievement = {
@@ -327,14 +366,13 @@ export const skillCategories: SkillCategory[] = [
     title: 'Product Analytics',
     subtitle: 'Metrics that drive product decisions',
     skills: [
-      { name: 'Funnel Analysis', mono: 'Fn', note: 'Core' },
-      { name: 'Retention Analysis', mono: 'Rt' },
-      { name: 'A/B Testing', mono: 'Ab' },
-      { name: 'Hypothesis Testing', mono: 'Ht' },
-      { name: 'Customer Segmentation', mono: 'Cs' },
-      { name: 'RCA', mono: 'Rc' },
+      { name: 'KPI Tracking', mono: 'Kp', note: 'Core' },
       { name: 'Business Metrics', mono: 'Bm' },
-      { name: 'KPI Tracking', mono: 'Kp' },
+      { name: 'RCA', mono: 'Rc' },
+      { name: 'Hypothesis Testing', mono: 'Ht' },
+      { name: 'Regression Analysis', mono: 'Rg' },
+      { name: 'Trend Analysis', mono: 'Tr' },
+      { name: 'Data-Driven Decisions', mono: 'Dd' },
     ],
   },
   {
@@ -371,14 +409,12 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'tools',
     title: 'Tools',
-    subtitle: 'Delivery, APIs, process & dashboards',
+    subtitle: 'Delivery, APIs & process',
     skills: [
       { name: 'Jira', mono: 'Ji', note: 'Daily' },
       { name: 'Confluence', mono: 'Cf' },
       { name: 'Postman', mono: 'Pm' },
       { name: 'Swagger', mono: 'Sw' },
-      { name: 'Power BI', mono: 'Pb' },
-      { name: 'Tableau', mono: 'Tb' },
       { name: 'Draw.io', mono: 'Dr' },
       { name: 'Visio', mono: 'Vs' },
       { name: 'Lucidchart', mono: 'Lc' },
@@ -396,6 +432,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Data Cleaning', mono: 'Dc' },
       { name: 'Data Validation', mono: 'Dv' },
       { name: 'Data Quality Assessment', mono: 'Dq' },
+      { name: 'Data Reconciliation', mono: 'Dr' },
     ],
   },
   {
@@ -428,6 +465,8 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Pandas', mono: 'Pd' },
       { name: 'NumPy', mono: 'Np' },
       { name: 'Matplotlib', mono: 'Mp' },
+      { name: 'Seaborn', mono: 'Sb' },
+      { name: 'Plotly', mono: 'Pl' },
       { name: 'Scikit-Learn', mono: 'Sk' },
       { name: 'FastAPI', mono: 'Fa' },
       { name: 'Flask', mono: 'Fl' },
@@ -443,9 +482,15 @@ export const skillCategories: SkillCategory[] = [
  */
 export const skillEvidence: Record<string, string[]> = {
   RCA: ['Lending workflow bottleneck analysis — Nucleus Software'],
-  'KPI Tracking': ['Data-driven process improvements — Nucleus Software'],
-  'Customer Segmentation': ['Year-wise cohort comparison — Social Anxiety Analytics'],
+  'KPI Tracking': ['Turnaround time 5h → 1h — Contact Point Verification'],
+  'Business Metrics': ['Turnaround time & client onboarding — Contact Point Verification'],
   'Hypothesis Testing': ['Year-wise differences — Social Anxiety Analytics'],
+  'Regression Analysis': ['Tobit regression — Econometric Driver Analysis', 'Logistic Regression — Social Anxiety Analytics'],
+  'Trend Analysis': ['Lending workflow analysis — Nucleus Software'],
+  'Data-Driven Decisions': ['SQL & Excel insights — Nucleus Software'],
+  'Data Reconciliation': ['SQL Data Validation — Nucleus Software'],
+  'Data Validation': ['SQL Data Validation — Nucleus Software'],
+  R: ['Econometric Driver Analysis'],
   'Business Requirements': ['Lead Management — Nucleus Software'],
   'API Requirements': ['CPV & LEAD workflows — Nucleus Software'],
   'Functional Specifications': ['CPV & LEAD workflows — Nucleus Software'],
@@ -463,7 +508,7 @@ export const skillEvidence: Record<string, string[]> = {
   'User Management & IAM': ['Current work — Nucleus Software'],
   Agile: ['Product Owners, Developers & QA — Nucleus Software'],
   'Stakeholder Collaboration': ['Stakeholders & Product Managers — Lead Management', 'PQM team & customers — CPV'],
-  SQL: ['Lending workflow analysis — Nucleus Software'],
+  SQL: ['Lending workflow analysis — Nucleus Software', 'SQL Data Validation — Nucleus Software'],
   'Advanced Excel': ['Lending workflow analysis — Nucleus Software'],
   EDA: ['Social Anxiety Analytics'],
   Python: ['Herbal Literature LLM', 'Social Anxiety Analytics'],
@@ -543,6 +588,14 @@ export const seasons: Season[] = [
       },
       {
         code: 'S02 E03',
+        title: 'The Econometrician',
+        description: 'Econometrics at IISER Bhopal — a Tobit regression in R measuring how demographic and behavioural drivers shape a survey outcome.',
+        tags: ['R', 'Econometrics', 'Tobit'],
+        runtime: 'Nov 2023',
+        palette: amber,
+      },
+      {
+        code: 'S02 E04',
         title: 'The Raider',
         description: 'Gold medal in kabaddi at IISM.',
         tags: ['Kabaddi', 'Gold'],
@@ -608,16 +661,16 @@ export const seasons: Season[] = [
       {
         code: 'S04 E02',
         title: 'The Verifier',
-        description: 'Contact Point Verification — user stories, testing and bug triage with PQM, Given-When-Then ATDD, the product write-up and customer demos.',
-        tags: ['CPV', 'GWT', 'Customer Demos'],
+        description: 'Contact Point Verification — user stories, Given-When-Then ATDD, testing with PQM and Go-Live. Turnaround time cut from 5 hours to 1 hour; 2 enterprise clients onboarded in 3 months.',
+        tags: ['CPV', '5h → 1h', '2 Clients'],
         runtime: 'Shipped',
         palette: jade,
       },
       {
         code: 'S04 E03',
         title: 'The Optimizer',
-        description: 'Analyzing lending workflows with SQL and Excel to surface bottlenecks, manual touchpoints and process inefficiencies.',
-        tags: ['SQL', 'Excel', 'Process Improvement'],
+        description: 'Analyzing lending workflows with SQL and Excel to surface bottlenecks and inefficiencies, and validating and reconciling production data.',
+        tags: ['SQL', 'Excel', 'Data Validation'],
         runtime: 'Nucleus Software',
         palette: amber,
       },
@@ -635,13 +688,13 @@ export const seasons: Season[] = [
     number: 5,
     title: "What's Next",
     period: 'Now streaming',
-    synopsis: 'The next arc: product and business roles where data, analysis and AI shape what gets built.',
+    synopsis: 'The next arc: product, business and data roles where analysis shapes what gets built.',
     episodes: [
       {
         code: 'S05 E01',
         title: 'The Product Chapter',
-        description: 'Heading for Product Analyst, Senior Data Analyst, Associate Product Manager and Business Analyst roles — funnels, retention, A/B testing and segmentation, with AI in the toolkit.',
-        tags: ['Product Analyst', 'Senior Data Analyst', 'APM', 'Business Analyst'],
+        description: 'Heading for Product Analyst, Business Analyst and Data Analyst roles — turning business problems into analysis, KPIs and decisions, with SQL, Python, R and AI in the toolkit.',
+        tags: ['Product Analyst', 'Business Analyst', 'Data Analyst'],
         runtime: 'In production',
         palette: crimson,
       },
@@ -654,10 +707,10 @@ export type TopPick = { label: string; title: string; detail: string; palette: P
 export const topPicks: TopPick[] = [
   { label: 'Current role', title: 'Solutions Analyst', detail: 'Retail Banking • Lending', palette: ocean },
   { label: 'Shipped', title: 'Lead Management', detail: 'Backend • BRs → stories → ATDD', palette: ocean },
-  { label: 'Shipped', title: 'CPV', detail: 'GWT • PQM • customer demos', palette: jade },
+  { label: 'Shipped', title: 'CPV', detail: 'Turnaround 5h → 1h • 2 clients', palette: jade },
   { label: 'Now filming', title: 'User Mgmt & IAM', detail: 'Across the whole product', palette: violet },
-  { label: 'Product analytics', title: 'Funnels & A/B', detail: 'Retention • Segmentation • RCA', palette: crimson },
-  { label: 'Daily tools', title: 'SQL + Jira', detail: 'Excel • Power BI • Confluence • Postman', palette: amber },
+  { label: 'Data quality', title: 'SQL Validation', detail: 'Reconciliation • Diagnostics', palette: crimson },
+  { label: 'Daily tools', title: 'SQL + Jira', detail: 'Excel • Python • Confluence • Postman', palette: amber },
   { label: 'National rank', title: 'GATE DA', detail: 'Top 2% nationally • 2025', palette: jade },
   { label: 'AI in the toolkit', title: 'LLM Insights', detail: 'BS thesis • BERT • FastAPI', palette: crimson },
   { label: 'Alma mater', title: 'IISER Bhopal', detail: 'BS Data Science & Engineering', palette: violet },
@@ -671,15 +724,15 @@ export const hero = {
   chips: [
     { text: 'Stories → ATDD (GWT)', sub: 'Business analysis' },
     { text: 'Retail Banking · Lending', sub: 'Domain' },
-    { text: 'SQL · Excel · Python', sub: 'Analytics stack' },
+    { text: 'SQL · Excel · Python · R', sub: 'Analytics stack' },
   ],
 };
 
 /** About Me fact grid. */
 export const aboutFacts = [
   { k: 'Now', v: 'Solutions Analyst · Retail Banking', s: 'Nucleus Software · Lending — Lead Mgmt, CPV, IAM' },
-  { k: 'Open to', v: 'Product & Business roles', s: 'Product Analyst · Sr. Data Analyst · APM · BA' },
-  { k: 'Toolkit', v: 'SQL, Excel & Power BI', s: 'with Jira, Confluence, Postman, Swagger & Python' },
+  { k: 'Open to', v: 'Product, Business & Data roles', s: 'Product Analyst · Business Analyst · Data Analyst' },
+  { k: 'Toolkit', v: 'SQL, Excel & Python', s: 'with R, Jira, Confluence, Postman & Swagger' },
   { k: 'Studied', v: 'BS, Data Science & Engineering', s: 'IISER Bhopal · 2021 – 2025 · ' + profile.location },
 ];
 
@@ -696,14 +749,14 @@ export type IntroSlide = { kicker: string; title: string; lines: string[]; chips
 export const introSlides: IntroSlide[] = [
   {
     kicker: 'Now',
-    title: 'Product & Business Analyst',
-    lines: ['Solutions Analyst · Nucleus Software · Retail Banking — Lending', 'Shipped: Lead Management (backend) · Contact Point Verification', 'Now: User Management & IAM across the product'],
+    title: 'Product, Business & Data Analyst',
+    lines: ['Solutions Analyst · Nucleus Software · Retail Banking — Lending', 'Shipped: Lead Management · Contact Point Verification (turnaround 5h → 1h)', 'Now: User Management & IAM across the product'],
   },
   {
     kicker: 'Skills',
     title: 'Data → Decisions.',
-    lines: ['Funnels · Retention · A/B testing · RCA · Segmentation', 'SQL · Advanced Excel · Power BI · Tableau · Python', 'Jira · Confluence · Postman · Swagger · Draw.io'],
-    chips: ['SQL', 'Power BI', 'Jira', 'Postman', 'A/B Testing', 'Funnels'],
+    lines: ['KPI tracking · RCA · Hypothesis testing · Regression · Data validation', 'SQL · Advanced Excel · Python · R', 'Jira · Confluence · Postman · Swagger · Draw.io'],
+    chips: ['SQL', 'Excel', 'Python', 'R', 'Jira', 'KPIs'],
   },
   {
     kicker: 'Education',
@@ -714,7 +767,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'With AI',
     title: 'AI in the Toolkit',
-    lines: ['LLM thesis — structured extraction with BERT, Gradio & FastAPI', 'ML modeling with SVM, Logistic Regression & KNN', 'Applied research at IIT Jammu & IISER Bhopal'],
+    lines: ['LLM thesis — structured extraction with BERT, Gradio & FastAPI', 'ML modeling with SVM, Logistic Regression & KNN', 'AI/ML initiatives at Nucleus — pre-delinquency & credit decisioning'],
   },
   {
     kicker: 'Achievements',
@@ -724,7 +777,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Open to',
     title: 'The Next Role',
-    lines: ['Product Analyst · Senior Data Analyst', 'Associate Product Manager · Business Analyst'],
+    lines: ['Product Analyst · Business Analyst', 'Data Analyst'],
   },
 ];
 
